@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/susil-iti/static/css/main.92c8d4eb.css",
+    "main.css": "/susil-iti/static/css/main.6e1891ba.css",
     "main.js": "/susil-iti/static/js/main.abbcca26.js",
     "index.html": "/susil-iti/index.html",
-    "main.92c8d4eb.css.map": "/susil-iti/static/css/main.92c8d4eb.css.map",
+    "main.6e1891ba.css.map": "/susil-iti/static/css/main.6e1891ba.css.map",
     "main.abbcca26.js.map": "/susil-iti/static/js/main.abbcca26.js.map"
   },
   "entrypoints": [
-    "static/css/main.92c8d4eb.css",
+    "static/css/main.6e1891ba.css",
     "static/js/main.abbcca26.js"
   ]
 }
