@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail, MapPin, ChevronRight, Award, Users, BookOpen, Wrench, Cpu, ShoppingCart, Settings, GraduationCap, ChevronDown } from 'lucide-react';
+import { ShoppingCart, Heart, Search, Menu, X, Star, ChevronLeft, ChevronRight, Sparkles, Eye, Phone, Mail, MapPin, ChevronRight as ChevronRightIcon, Award, Users, BookOpen, Wrench, Cpu, Settings, GraduationCap } from 'lucide-react';
 
-const SusilITI = () => {
+function App() {
   const [activeMenu, setActiveMenu] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -178,7 +177,7 @@ const SusilITI = () => {
                     className="bg-white text-blue-900 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center space-x-2"
                   >
                     <span>Explore Courses</span>
-                    <ChevronRight className="w-5 h-5" />
+                    <ChevronRightIcon className="w-5 h-5" />
                   </button>
                   <button className="bg-blue-700 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-600 transition-all duration-300 transform hover:scale-105 shadow-xl">
                     Contact Us
@@ -405,6 +404,6 @@ const SusilITI = () => {
       </footer>
     </div>
   );
-};
+}
 
-export default SusilITI;
+export default App;
