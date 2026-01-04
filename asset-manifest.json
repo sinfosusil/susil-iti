@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/susil-iti/static/css/main.e6c13ad2.css",
-    "main.js": "/susil-iti/static/js/main.fac8b4c0.js",
-    "static/js/488.8521f070.chunk.js": "/susil-iti/static/js/488.8521f070.chunk.js",
+    "main.css": "/susil-iti/static/css/main.92c8d4eb.css",
+    "main.js": "/susil-iti/static/js/main.abbcca26.js",
     "index.html": "/susil-iti/index.html",
-    "main.e6c13ad2.css.map": "/susil-iti/static/css/main.e6c13ad2.css.map",
-    "main.fac8b4c0.js.map": "/susil-iti/static/js/main.fac8b4c0.js.map",
-    "488.8521f070.chunk.js.map": "/susil-iti/static/js/488.8521f070.chunk.js.map"
+    "main.92c8d4eb.css.map": "/susil-iti/static/css/main.92c8d4eb.css.map",
+    "main.abbcca26.js.map": "/susil-iti/static/js/main.abbcca26.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.fac8b4c0.js"
+    "static/css/main.92c8d4eb.css",
+    "static/js/main.abbcca26.js"
   ]
 }
