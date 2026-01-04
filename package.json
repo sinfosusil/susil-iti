@@ -1,7 +1,7 @@
 {
   "name": "susil-iti",
   "version": "0.1.0",
-  "homepage": "https://sinfosusil.github.io/susil-iti",
+  "homepage": "https://www.susilindia.com",
   "private": true,
   "dependencies": {
     "lucide-react": "^0.263.1",
