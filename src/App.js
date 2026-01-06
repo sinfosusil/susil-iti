@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, Heart, Search, Menu, X, Star, ChevronLeft, ChevronRight, Sparkles, Eye, Phone, Mail, MapPin, ChevronRight as ChevronRightIcon, Award, Users, BookOpen, Wrench, Cpu, Settings, GraduationCap } from 'lucide-react';
+import { ShoppingCart, Heart, Search, Menu, X, Star, ChevronLeft, ChevronRight, Sparkles, Eye, Phone, Mail, MapPin, ChevronRight as ChevronRightIcon, Award, Users, BookOpen, Wrench, Cpu, Settings, GraduationCap, Plus, Monitor, BatteryCharging } from 'lucide-react';
 
 function App() {
   const [activeMenu, setActiveMenu] = useState('home');
@@ -53,6 +53,137 @@ function App() {
     { number: "50+", label: "Industry Partners" }
   ];
 
+  const assembledProducts = {
+    speakers: [
+      { id: 's1', name: '2 Way Speaker', description: 'Professional grade audio output', image: 's (1).jpeg' },
+      { id: 's2', name: '2way Woofer', description: 'Deep bass performance', image: 's (2).jpeg' },
+      { id: 's3', name: '3way Woofer', description: 'High-fidelity sound reproduction', image: 's (3).jpeg' },
+      { id: 's4', name: '3way Tower Speaker', description: 'Floor-standing premium audio', image: 's (4).jpeg' },
+      { id: 's5', name: '2way Slope Speaker', description: 'Unique acoustic design', image: 's (5).jpeg' }
+    ],
+    amps: [
+      { id: 'a1', name: 'Usb Stereo Player', description: 'With 3 Band equalizer', image: 's (6).jpeg' },
+      { id: 'a2', name: '12v - USB Player', description: '2.1/4.1 Channel support', image: 's (7).jpeg' },
+      { id: 'a3', name: '24v - USB Player', description: 'High power input support', image: 's (8).jpeg' },
+      { id: 'a4', name: 'Dolby 5.1 Digital Amplifier', description: 'Crystal clear surround sound', image: 's (9).jpeg' },
+      { id: 'a5', name: 'Dolby 5.1 Channel Digital', description: 'Theater system | Home DTS', image: 's (10).jpeg' },
+      { id: 'a6', name: 'DOLBY 5.1 Digital LED', description: 'LED Level Home DTS', image: 's (11).jpeg' },
+      { id: 'a7', name: '13.1 Channel Dolby ATMOS', description: 'Ultimate power amplifier', image: 's (12).jpeg' },
+      { id: 'a8', name: 'Subwoofer Amplifier', description: 'Dedicated bass amplification', image: 's (13).jpeg' },
+      { id: 'a9', name: 'DOLBY ATMOS PRE-AMP', description: 'Precision signal processing', image: 's (14).jpeg' }
+    ]
+  };
+
+  const showroomPrices = {
+    tvs: [
+      {
+        category: "NORMAL LED TV",
+        icon: <Monitor className="w-6 h-6 text-blue-600" />,
+        items: [
+          { size: "24” TV", price: "Rs. 7,000" },
+          { size: "32” TV", price: "Rs. 8,500" },
+          { size: "40” TV", price: "Rs. 14,000" }
+        ]
+      },
+      {
+        category: "SMART LED TV",
+        icon: <Sparkles className="w-6 h-6 text-indigo-600" />,
+        items: [
+          { size: "24” TV", price: "Rs. 8,500" },
+          { size: "40” TV", price: "Rs. 15,000" },
+          { size: "50” TV", price: "Rs. 25,000" }
+        ]
+      },
+      {
+        category: "SMART LED TV (Larger)",
+        icon: <Eye className="w-6 h-6 text-cyan-600" />,
+        items: [
+          { size: "32” TV", price: "Rs. 10,000" },
+          { size: "43” TV", price: "Rs. 16,000" },
+          { size: "43” 4K TV", price: "Rs. 18,500" }
+        ]
+      },
+      {
+        category: "SMART 4K / UHD DOLBY",
+        icon: <Award className="w-6 h-6 text-purple-600" />,
+        items: [
+          { size: "43” TV", price: "Rs. 22,000" },
+          { size: "50” TV", price: "Rs. 30,000" },
+          { size: "55” TV", price: "Rs. 35,000" },
+          { size: "65” TV", price: "Rs. 50,000" }
+        ]
+      }
+    ],
+    stabilizers: [
+      {
+        category: "ISOLATED STABILIZER",
+        icon: <BatteryCharging className="w-6 h-6 text-amber-600" />,
+        items: [
+          { size: "IS30", price: "Rs. 2,500" },
+          { size: "IS60", price: "Rs. 3,000" },
+          { size: "IS100", price: "Rs. 3,500" },
+          { size: "IS200", price: "Rs. 4,500" }
+        ]
+      }
+    ]
+  };
+
+  const audioPackages = [
+    { model: "SA021 – 30", modelPrice: "Rs. 5,000", speaker: "8” / 20W × 2 No’s – Rs. 2,500", total: "Rs. 7,500" },
+    { model: "SA022 – 100", modelPrice: "Rs. 7,500", speaker: "8” / 40W 3-Way × 2 No’s – Rs. 7,000", total: "Rs. 14,500" },
+    { model: "SA022 – 100", modelPrice: "Rs. 7,500", speaker: "8” / 40W 2-Way × 2 No’s – Rs. 3,500", total: "Rs. 11,000" },
+    { model: "SA023 – 200", modelPrice: "Rs. 9,000", speaker: "8” / 100W × 2 No’s – Rs. 5,000", total: "Rs. 14,000" },
+    { model: "SA023 – 200", modelPrice: "Rs. 9,000", speaker: "12” / 100W × 2 No’s – Rs. 7,000", total: "Rs. 16,000" }
+  ];
+
+  const subwooferPackages = [
+    { model: "SA011 – 200", modelPrice: "Rs. 10,000", speaker: "—", sub: "12” SA12200 – Rs. 5,000", total: "Rs. 15,000" },
+    { model: "SA011 – 200", modelPrice: "Rs. 10,000", speaker: "—", sub: "12” SD12200 – Rs. 6,000", total: "Rs. 16,000" },
+    { model: "SA011 – 200", modelPrice: "Rs. 10,000", speaker: "—", sub: "12” SJ12300 – Rs. 8,000", total: "Rs. 18,000" },
+    { model: "SA012 – 1600", modelPrice: "Rs. 20,000", speaker: "—", sub: "12” SJ12500 (2 No’s) – Rs. 18,000", total: "Rs. 38,000" },
+    { model: "SA012 – 1600", modelPrice: "Rs. 20,000", speaker: "—", sub: "15” SA15500 – Rs. 15,000", total: "Rs. 35,000" }
+  ];
+
+  const homeTheaterPackages = [
+    { model: "SA031 – 80", modelPrice: "Rs. 7,000", speaker: "4” / 10W × 2 No’s – Rs. 1,500", sub: "8” SA08280 – Rs. 3,000", total: "Rs. 11,500" },
+    { model: "SA031 – 80", modelPrice: "Rs. 7,000", speaker: "4” / 10W × 2 No’s – Rs. 1,500", sub: "8” SD08250 – Rs. 4,000", total: "Rs. 12,500" },
+    { model: "SA031 – 80", modelPrice: "Rs. 7,000", speaker: "4” / 10W × 2 No’s – Rs. 1,500", sub: "10” SA10250 – Rs. 4,000", total: "Rs. 12,500" },
+    { model: "SA031 – 80", modelPrice: "Rs. 7,000", speaker: "4” / 10W × 2 No’s – Rs. 1,500", sub: "10” SD10250 – Rs. 5,000", total: "Rs. 13,500" },
+    { model: "SA032 – 300", modelPrice: "Rs. 10,000", speaker: "8” / 40W × 2 No’s – Rs. 4,000", sub: "12” SD12200 – Rs. 6,000", total: "Rs. 20,000" },
+    { model: "SA032 – 300", modelPrice: "Rs. 10,000", speaker: "8” / 40W × 2 No’s – Rs. 4,000", sub: "12” SJ12300 – Rs. 8,000", total: "Rs. 22,000" }
+  ];
+
+  const homeTheaterPackages51 = [
+    { model: "SA061 – 120", modelPrice: "Rs. 8,000", speaker: "4” / 10W × 5 No’s – Rs. 4,500", sub: "8” SA08280 – Rs. 3,000", total: "Rs. 15,500" },
+    { model: "SA061 – 120", modelPrice: "Rs. 8,000", speaker: "4” / 10W × 5 No’s – Rs. 4,500", sub: "8” SD08250 – Rs. 4,000", total: "Rs. 16,500" },
+    { model: "SA061 – 120", modelPrice: "Rs. 8,000", speaker: "4” / 10W × 5 No’s – Rs. 4,500", sub: "10” SA10250 – Rs. 4,000", total: "Rs. 16,500" },
+    { model: "SA061 – 120", modelPrice: "Rs. 8,000", speaker: "4” / 10W × 5 No’s – Rs. 4,500", sub: "10” SD10250 – Rs. 5,000", total: "Rs. 17,500" }
+  ];
+
+  const homeTheaterPackagesDigital51 = [
+    { model: "SD061", power: "170", ampPrice: "Rs. 15,000", speaker: "4” / 10W × 5 Nos", speakerPrice: "Rs. 4,500", sub: "10” SA 10250", subPrice: "Rs. 4,000", total: "Rs. 23,500" },
+    { model: "SD061", power: "170", ampPrice: "Rs. 15,000", speaker: "4” / 10W × 5 Nos", speakerPrice: "Rs. 4,500", sub: "10” SD 10250", subPrice: "Rs. 5,000", total: "Rs. 24,500" },
+    { model: "SD062", power: "300", ampPrice: "Rs. 17,000", speaker: "8” / 20W × 5 Nos", speakerPrice: "Rs. 8,500", sub: "12” SD 12200", subPrice: "Rs. 6,000", total: "Rs. 31,500" },
+    { model: "SD062", power: "300", ampPrice: "Rs. 17,000", speaker: "8” / 20W × 5 Nos", speakerPrice: "Rs. 8,500", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 33,500" },
+    { model: "SD063", power: "350", ampPrice: "Rs. 20,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 9,000", sub: "12” SD 12200", subPrice: "Rs. 6,000", total: "Rs. 35,000" },
+    { model: "SD063", power: "350", ampPrice: "Rs. 20,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 9,000", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 37,000" },
+    { model: "SD064", power: "470", ampPrice: "Rs. 23,000", speaker: "4” / 10W × 5 Nos", speakerPrice: "Rs. 4,500", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 35,500" },
+    { model: "SD065", power: "550", ampPrice: "Rs. 25,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 9,000", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 42,000" }
+  ];
+
+  const homeTheaterPackagesAtmos = [
+    { model: "SD066", power: "350R", ampPrice: "Rs. 35,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 9,000", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 52,000" },
+    { model: "SD067", power: "470LR", ampPrice: "Rs. 37,000", speaker: "4” / 10W × 5 Nos", speakerPrice: "Rs. 4,500", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 49,500" },
+    { model: "SD067", power: "550R", ampPrice: "Rs. 40,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 9,000", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 57,000" }
+  ];
+
+  const ultimateAVRSystems = [
+    { config: "7.1 Channel", model: "SD081 – 600R", modelPrice: "Rs. 50,000", speaker: "8” / 40W × 7 Nos", speakerPrice: "Rs. 12,000", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 70,000" },
+    { config: "9.1 Dolby Atmos", model: "SD101 – 850R", modelPrice: "Rs. 1,50,000", speaker: "8” / 40W × 9 Nos", speakerPrice: "Rs. 15,000", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 1,73,000" },
+    { config: "11.2 Dolby Atmos", model: "SD121 – 850R", modelPrice: "Rs. 1,75,000", speaker: "8” / 40W × 11 Nos", speakerPrice: "Rs. 18,000", sub: "12” SJ 12300 × 2 Nos", subPrice: "Rs. 16,000", total: "Rs. 2,09,000" },
+    { config: "13.2 Dolby Atmos", model: "SD141 – 950R", modelPrice: "Rs. 2,75,000", speaker: "8” / 40W × 13 Nos", speakerPrice: "Rs. 21,000", sub: "12” SJ 12300 × 2 Nos", subPrice: "Rs. 16,000", total: "Rs. 3,12,000" }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       {/* Top Contact Bar */}
@@ -82,9 +213,8 @@ function App() {
       </div>
 
       {/* Navigation */}
-      <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-xl shadow-lg' : 'bg-white'
-      }`}>
+      <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-xl shadow-lg' : 'bg-white'
+        }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
@@ -106,11 +236,10 @@ function App() {
                 <button
                   key={item.id}
                   onClick={() => setActiveMenu(item.id)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 ${
-                    activeMenu === item.id
-                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
-                      : 'text-slate-700 hover:bg-blue-50'
-                  }`}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 ${activeMenu === item.id
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
+                    : 'text-slate-700 hover:bg-blue-50'
+                    }`}
                 >
                   {item.icon}
                   <span className="text-sm">{item.label}</span>
@@ -137,11 +266,10 @@ function App() {
                     setActiveMenu(item.id);
                     setIsMenuOpen(false);
                   }}
-                  className={`w-full px-4 py-3 rounded-lg font-medium transition-all duration-300 flex items-center space-x-3 ${
-                    activeMenu === item.id
-                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
-                      : 'text-slate-700 hover:bg-blue-50'
-                  }`}
+                  className={`w-full px-4 py-3 rounded-lg font-medium transition-all duration-300 flex items-center space-x-3 ${activeMenu === item.id
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
+                    : 'text-slate-700 hover:bg-blue-50'
+                    }`}
                 >
                   {item.icon}
                   <span>{item.label}</span>
@@ -155,35 +283,74 @@ function App() {
       {/* Hero Section - Home */}
       {activeMenu === 'home' && (
         <div>
-          <div className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 py-24">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0" style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-              }} />
-            </div>
-            
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center">
-                <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
-                  We Educate and Develop<br />
-                  <span className="text-blue-300">Certified Skilled Technicians</span>
-                </h2>
-                <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                  Premier electronics training institute in Rajapalayam, offering industry-recognized certification and comprehensive technical education
-                </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <button 
-                    onClick={() => setActiveMenu('electronics')}
-                    className="bg-white text-blue-900 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center space-x-2"
-                  >
-                    <span>Explore Courses</span>
-                    <ChevronRightIcon className="w-5 h-5" />
-                  </button>
-                  <button className="bg-blue-700 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-600 transition-all duration-300 transform hover:scale-105 shadow-xl">
-                    Contact Us
-                  </button>
+          <div className="relative bg-white overflow-hidden border-b border-slate-100">
+            <div className="max-w-7xl mx-auto">
+              <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <svg
+                  className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
+                  fill="currentColor"
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <polygon points="50,0 100,0 50,100 0,100" />
+                </svg>
+
+                <div className="pt-10 mx-auto max-w-7xl px-4 sm:pt-12 sm:px-6 md:pt-16 lg:pt-20 lg:px-8 xl:pt-28">
+                  <div className="sm:text-center lg:text-left">
+                    <div className="inline-flex items-center space-x-2 text-blue-600 font-semibold tracking-wide uppercase text-sm mb-4">
+                      <Award className="w-5 h-5" />
+                      <span>Government Recognized Institution</span>
+                    </div>
+                    <h2 className="text-4xl tracking-tight font-extrabold text-slate-900 sm:text-5xl md:text-7xl">
+                      <span className="block">Building Careers in</span>
+                      <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                        Modern Electronics
+                      </span>
+                    </h2>
+                    <p className="mt-6 text-base text-slate-500 sm:text-lg sm:max-w-xl sm:mx-auto md:text-xl lg:mx-0 leading-relaxed font-light">
+                      Join SUSIL I.T.I, Rajapalayam's premier destination for technical excellence.
+                      We provide the skills, certification, and industry connections you need to excel
+                      in the fast-paced world of electronics.
+                    </p>
+                    <div className="mt-10 sm:flex sm:justify-center lg:justify-start gap-4">
+                      <button
+                        onClick={() => setActiveMenu('electronics')}
+                        className="flex items-center justify-center px-10 py-4 border border-transparent text-lg font-bold rounded-xl text-white bg-blue-600 hover:bg-blue-700 md:px-12 transition-all duration-300 transform hover:scale-105 shadow-xl shadow-blue-200"
+                      >
+                        Explore Courses
+                      </button>
+                      <button className="flex items-center justify-center px-10 py-4 border-2 border-slate-200 text-lg font-bold rounded-xl text-slate-700 bg-white hover:bg-slate-50 md:px-12 transition-all duration-300">
+                        Contact Us
+                      </button>
+                    </div>
+
+                    <div className="mt-12 flex items-center space-x-8 text-slate-400 border-t border-slate-100 pt-8">
+                      <div className="flex flex-col">
+                        <span className="text-2xl font-bold text-slate-900">15+</span>
+                        <span className="text-xs uppercase tracking-wider font-semibold">Years Excellence</span>
+                      </div>
+                      <div className="w-px h-8 bg-slate-200"></div>
+                      <div className="flex flex-col">
+                        <span className="text-2xl font-bold text-slate-900">100%</span>
+                        <span className="text-xs uppercase tracking-wider font-semibold">Job Support</span>
+                      </div>
+                      <div className="w-px h-8 bg-slate-200"></div>
+                      <div className="flex flex-col">
+                        <span className="text-2xl font-bold text-slate-900">1000+</span>
+                        <span className="text-xs uppercase tracking-wider font-semibold">Alumni</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+              <img
+                className="h-64 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+                src={`${process.env.PUBLIC_URL}/hero-bg.png`}
+                alt="SUSIL I.T.I Campus Building"
+              />
             </div>
           </div>
 
@@ -256,7 +423,7 @@ function App() {
         </div>
       )}
 
-      {/* Placeholder sections for other menus */}
+      {/* Other sections */}
       {activeMenu === 'electronics' && (
         <div className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -314,45 +481,437 @@ function App() {
         </div>
       )}
 
+      {/* Assembled Products Section */}
       {activeMenu === 'products' && (
-        <div className="py-20">
+        <div className="py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-orange-100 to-red-100 p-12 rounded-3xl">
-                <ShoppingCart className="w-24 h-24 mx-auto text-orange-600 mb-6" />
-                <h2 className="text-4xl font-bold text-slate-900 mb-4">Assembled Products</h2>
-                <p className="text-xl text-slate-600 mb-8">
-                  Content section ready for your assembled electronics products
-                </p>
-                <div className="inline-block bg-orange-50 px-6 py-3 rounded-full text-orange-600 font-medium">
-                  Add your content here
-                </div>
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center space-x-2 text-blue-600 font-bold tracking-widest uppercase text-sm mb-4">
+                <Sparkles className="w-5 h-5" />
+                <span>Susil Premium Audio</span>
               </div>
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">Expertly Assembled Products</h2>
+              <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Hand-crafted, high-performance audio systems designed for clarity, power, and durability.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {[...assembledProducts.speakers, ...assembledProducts.amps].map((product) => (
+                <div key={product.id} className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 border border-slate-100 transform hover:-translate-y-2">
+                  <div className="aspect-square bg-slate-100 relative overflow-hidden">
+                    {product.image ? (
+                      <img
+                        src={`${process.env.PUBLIC_URL}/products/${product.image}`}
+                        alt=""
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center text-slate-300">
+                        <Cpu className="w-16 h-16 opacity-20" />
+                      </div>
+                    )}
+                    {/* Minimal Overlay on Hover */}
+                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                      <div className="p-4 bg-white/20 backdrop-blur-md rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <Plus className="w-6 h-6 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       )}
 
       {activeMenu === 'service' && (
-        <div className="py-20">
+        <div className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-cyan-100 to-blue-100 p-12 rounded-3xl">
-                <Settings className="w-24 h-24 mx-auto text-cyan-600 mb-6" />
-                <h2 className="text-4xl font-bold text-slate-900 mb-4">Sales and Service</h2>
-                <p className="text-xl text-slate-600 mb-8">
-                  Content section ready for your sales and service offerings
-                </p>
-                <div className="inline-block bg-cyan-50 px-6 py-3 rounded-full text-cyan-600 font-medium">
-                  Add your content here
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-bold tracking-wide mb-4">
+                <ShoppingCart className="w-5 h-5" />
+                <span>Susil Showroom</span>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-black text-slate-900 mb-6">Showroom Price List – 2026</h2>
+              <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Premium LED TVs and power solutions at factory-direct prices. Professional installation and lifetime support guaranteed.
+              </p>
+            </div>
+
+            {/* LED TV Section */}
+            <div className="mb-24">
+              <div className="flex items-center space-x-4 mb-10">
+                <div className="h-12 w-2 bg-blue-600 rounded-full"></div>
+                <h3 className="text-4xl font-black text-slate-900">LED TV Solutions</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {showroomPrices.tvs.map((group, idx) => (
+                  <div key={idx} className="group bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div className="flex items-center space-x-4 mb-8">
+                      <div className="p-4 bg-white rounded-2xl shadow-sm group-hover:scale-110 transition-transform duration-500">
+                        {group.icon}
+                      </div>
+                      <h4 className="text-lg font-black text-slate-900 tracking-tight uppercase">{group.category}</h4>
+                    </div>
+                    <div className="space-y-4">
+                      {group.items.map((item, iIdx) => (
+                        <div key={iIdx} className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100 group-hover:border-blue-100 transition-colors">
+                          <span className="text-slate-700 font-bold">{item.size}</span>
+                          <span className="text-blue-600 font-black text-lg">{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Stabilizer Section */}
+            <div>
+              <div className="flex items-center space-x-4 mb-10">
+                <div className="h-12 w-2 bg-amber-500 rounded-full"></div>
+                <h3 className="text-4xl font-black text-slate-900">Stabilizer Solutions</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {showroomPrices.stabilizers.map((group, idx) => (
+                  <div key={idx} className="group bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div className="flex items-center space-x-4 mb-8">
+                      <div className="p-4 bg-white rounded-2xl shadow-sm group-hover:scale-110 transition-transform duration-500">
+                        {group.icon}
+                      </div>
+                      <h4 className="text-lg font-black text-slate-900 tracking-tight uppercase">{group.category}</h4>
+                    </div>
+                    <div className="space-y-4">
+                      {group.items.map((item, iIdx) => (
+                        <div key={iIdx} className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100 group-hover:border-orange-100 transition-colors">
+                          <span className="text-slate-700 font-bold">{item.size}</span>
+                          <span className="text-orange-600 font-black text-lg">{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Audio System Packages Section */}
+            <div className="mb-24">
+              <div className="flex items-center space-x-4 mb-10">
+                <div className="h-12 w-2 bg-indigo-600 rounded-full"></div>
+                <h3 className="text-4xl font-black text-slate-900">Audio System Packages</h3>
+              </div>
+              <div className="overflow-hidden bg-white rounded-[2.5rem] border border-slate-100 shadow-xl">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-slate-900 text-white">
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Model</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Model Price</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Speakers Configuration</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider text-right">Total Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100">
+                      {audioPackages.map((pkg, idx) => (
+                        <tr key={idx} className="hover:bg-blue-50/50 transition-colors group">
+                          <td className="px-8 py-6">
+                            <span className="font-black text-slate-900 group-hover:text-blue-600 transition-colors">{pkg.model}</span>
+                          </td>
+                          <td className="px-8 py-6">
+                            <span className="text-slate-600 font-bold">{pkg.modelPrice}</span>
+                          </td>
+                          <td className="px-8 py-6">
+                            <span className="text-slate-600 italic">{pkg.speaker}</span>
+                          </td>
+                          <td className="px-8 py-6 text-right">
+                            <span className="text-2xl font-black text-blue-600">{pkg.total}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
+            </div>
+
+            {/* Sub-woofer System Packages Section */}
+            <div className="mb-24">
+              <div className="flex items-center space-x-4 mb-10">
+                <div className="h-12 w-2 bg-purple-600 rounded-full"></div>
+                <h3 className="text-4xl font-black text-slate-900">Sub-woofer System Packages</h3>
+              </div>
+              <div className="overflow-hidden bg-white rounded-[2.5rem] border border-slate-100 shadow-xl">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-slate-900 text-white">
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Model</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Model Price</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Sub-Woofer Detail</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider text-right">Total Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100">
+                      {subwooferPackages.map((pkg, idx) => (
+                        <tr key={idx} className="hover:bg-purple-50/50 transition-colors group">
+                          <td className="px-8 py-6">
+                            <span className="font-black text-slate-900 group-hover:text-purple-600 transition-colors">{pkg.model}</span>
+                          </td>
+                          <td className="px-8 py-6">
+                            <span className="text-slate-600 font-bold">{pkg.modelPrice}</span>
+                          </td>
+                          <td className="px-8 py-6">
+                            <span className="text-slate-600 italic">{pkg.sub}</span>
+                          </td>
+                          <td className="px-8 py-6 text-right">
+                            <span className="text-2xl font-black text-purple-600">{pkg.total}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            {/* Home Theater Packages Section */}
+            <div className="mb-24">
+              <div className="flex items-center space-x-4 mb-10">
+                <div className="h-12 w-2 bg-rose-600 rounded-full"></div>
+                <h3 className="text-4xl font-black text-slate-900">Home Theater System Packages 2.1 CHANNEL HOME DTS</h3>
+              </div>
+              <div className="overflow-hidden bg-white rounded-[2.5rem] border border-slate-100 shadow-xl">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-slate-900 text-white">
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Model</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Model Price</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Speakers</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Sub-Woofer</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider text-right">Total Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100">
+                      {homeTheaterPackages.map((pkg, idx) => (
+                        <tr key={idx} className="hover:bg-rose-50/50 transition-colors group">
+                          <td className="px-8 py-6">
+                            <span className="font-black text-slate-900 group-hover:text-rose-600 transition-colors">{pkg.model}</span>
+                          </td>
+                          <td className="px-8 py-6">
+                            <span className="text-slate-600 font-bold">{pkg.modelPrice}</span>
+                          </td>
+                          <td className="px-8 py-6">
+                            <span className="text-slate-600 text-sm">{pkg.speaker}</span>
+                          </td>
+                          <td className="px-8 py-6">
+                            <span className="text-slate-600 italic text-sm">{pkg.sub}</span>
+                          </td>
+                          <td className="px-8 py-6 text-right">
+                            <span className="text-2xl font-black text-rose-600">{pkg.total}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Home Theater Packages 5.1 Section */}
+            <div className="mb-24">
+              <div className="flex items-center space-x-4 mb-10">
+                <div className="h-12 w-2 bg-emerald-600 rounded-full"></div>
+                <h3 className="text-4xl font-black text-slate-900">Home Theater System Packages 5.1 CHANNEL ANALOG HOME DTS</h3>
+              </div>
+              <div className="overflow-hidden bg-white rounded-[2.5rem] border border-slate-100 shadow-xl">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-slate-900 text-white">
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Model</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Model Price</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Speakers (5 No's)</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider">Sub-Woofer</th>
+                        <th className="px-8 py-6 font-black uppercase tracking-wider text-right">Total Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100">
+                      {homeTheaterPackages51.map((pkg, idx) => (
+                        <tr key={idx} className="hover:bg-emerald-50/50 transition-colors group">
+                          <td className="px-8 py-6">
+                            <span className="font-black text-slate-900 group-hover:text-emerald-600 transition-colors">{pkg.model}</span>
+                          </td>
+                          <td className="px-8 py-6">
+                            <span className="text-slate-600 font-bold">{pkg.modelPrice}</span>
+                          </td>
+                          <td className="px-8 py-6">
+                            <span className="text-slate-600 text-sm">{pkg.speaker}</span>
+                          </td>
+                          <td className="px-8 py-6">
+                            <span className="text-slate-600 italic text-sm">{pkg.sub}</span>
+                          </td>
+                          <td className="px-8 py-6 text-right">
+                            <span className="text-2xl font-black text-emerald-600">{pkg.total}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            {/* Home Theater Packages Digital 5.1 Section */}
+            <div className="mb-24">
+              <div className="flex items-center space-x-4 mb-10">
+                <div className="h-12 w-2 bg-blue-700 rounded-full"></div>
+                <h3 className="text-4xl font-black text-slate-900">Home Theater System Packages 5.1 CHANNEL DIGITAL DOLBY HOME DTS</h3>
+              </div>
+              <div className="overflow-hidden bg-white rounded-[2.5rem] border border-slate-100 shadow-xl">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-slate-900 text-white">
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs">Model/Power</th>
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs">Amp Price</th>
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs">Speakers</th>
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs">Spk Price</th>
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs">Sub-Woofer</th>
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs">Sub Price</th>
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs text-right">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100">
+                      {homeTheaterPackagesDigital51.map((pkg, idx) => (
+                        <tr key={idx} className="hover:bg-blue-50/50 transition-colors group">
+                          <td className="px-6 py-5">
+                            <div className="font-black text-slate-900 group-hover:text-blue-700">{pkg.model}</div>
+                            <div className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">{pkg.power} Watts</div>
+                          </td>
+                          <td className="px-6 py-5 text-slate-600 font-bold text-sm whitespace-nowrap">{pkg.ampPrice}</td>
+                          <td className="px-6 py-5 text-slate-600 text-[11px] leading-tight font-medium">{pkg.speaker}</td>
+                          <td className="px-6 py-5 text-slate-600 font-bold text-sm whitespace-nowrap">{pkg.speakerPrice}</td>
+                          <td className="px-6 py-5 text-slate-600 text-[11px] italic font-medium">{pkg.sub}</td>
+                          <td className="px-6 py-5 text-slate-600 font-bold text-sm whitespace-nowrap">{pkg.subPrice}</td>
+                          <td className="px-6 py-5 text-right">
+                            <span className="text-xl font-black text-blue-700 whitespace-nowrap">{pkg.total}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Home Theater Packages Atmos Section */}
+            <div className="mb-24">
+              <div className="flex items-center space-x-4 mb-10">
+                <div className="h-12 w-2 bg-indigo-900 rounded-full"></div>
+                <h3 className="text-4xl font-black text-slate-900">Home Theater System Packages 5.1 Channel Digital Cinema Theatre – Dolby Home DTS</h3>
+              </div>
+              <div className="overflow-hidden bg-white rounded-[2.5rem] border border-slate-100 shadow-xl">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-slate-900 text-white">
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs">Model/Power</th>
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs">Amp Price</th>
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs">Speakers</th>
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs">Spk Price</th>
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs">Sub-Woofer</th>
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs">Sub Price</th>
+                        <th className="px-6 py-5 font-black uppercase tracking-wider text-xs text-right">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100">
+                      {homeTheaterPackagesAtmos.map((pkg, idx) => (
+                        <tr key={idx} className="hover:bg-indigo-50/50 transition-colors group">
+                          <td className="px-6 py-5">
+                            <div className="font-black text-slate-900 group-hover:text-indigo-900">{pkg.model}</div>
+                            <div className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">{pkg.power} Specs</div>
+                          </td>
+                          <td className="px-6 py-5 text-slate-600 font-bold text-sm whitespace-nowrap">{pkg.ampPrice}</td>
+                          <td className="px-6 py-5 text-slate-600 text-[11px] leading-tight font-medium">{pkg.speaker}</td>
+                          <td className="px-6 py-5 text-slate-600 font-bold text-sm whitespace-nowrap">{pkg.speakerPrice}</td>
+                          <td className="px-6 py-5 text-slate-600 text-[11px] italic font-medium">{pkg.sub}</td>
+                          <td className="px-6 py-5 text-slate-600 font-bold text-sm whitespace-nowrap">{pkg.subPrice}</td>
+                          <td className="px-6 py-5 text-right">
+                            <span className="text-xl font-black text-indigo-900 whitespace-nowrap">{pkg.total}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Ultimate AVR Systems Section */}
+            <div className="mb-24">
+              <div className="flex items-center space-x-4 mb-10">
+                <div className="h-12 w-2 bg-amber-600 rounded-full"></div>
+                <h3 className="text-4xl font-black text-slate-900">Ultimate Flagship AVR Dolby Atmos Systems</h3>
+              </div>
+              <div className="overflow-hidden bg-white rounded-[2.5rem] border-2 border-amber-100 shadow-2xl relative">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-bl-full -mr-16 -mt-16 z-0"></div>
+                <div className="overflow-x-auto relative z-10">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-gradient-to-r from-slate-900 to-amber-950 text-white">
+                        <th className="px-6 py-6 font-black uppercase tracking-wider text-xs">Configuration</th>
+                        <th className="px-6 py-6 font-black uppercase tracking-wider text-xs">Model / AVR Price</th>
+                        <th className="px-6 py-6 font-black uppercase tracking-wider text-xs">Speakers Detail</th>
+                        <th className="px-6 py-6 font-black uppercase tracking-wider text-xs">Subwoofer Detail</th>
+                        <th className="px-6 py-6 font-black uppercase tracking-wider text-xs text-right">Ultimate Total</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-amber-50">
+                      {ultimateAVRSystems.map((pkg, idx) => (
+                        <tr key={idx} className="hover:bg-amber-50/30 transition-colors group">
+                          <td className="px-6 py-6">
+                            <span className="font-black text-amber-700">{pkg.config}</span>
+                          </td>
+                          <td className="px-6 py-6">
+                            <div className="font-black text-slate-900">{pkg.model}</div>
+                            <div className="text-sm font-bold text-amber-600">{pkg.modelPrice}</div>
+                          </td>
+                          <td className="px-6 py-6 text-slate-600 text-sm font-medium">
+                            <div>{pkg.speaker}</div>
+                            <div className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{pkg.speakerPrice}</div>
+                          </td>
+                          <td className="px-6 py-6 text-slate-600 text-sm italic">
+                            <div>{pkg.sub}</div>
+                            <div className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{pkg.subPrice}</div>
+                          </td>
+                          <td className="px-6 py-6 text-right">
+                            <span className="text-2xl font-black text-amber-700 drop-shadow-sm">{pkg.total}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-20 p-12 bg-gradient-to-r from-blue-900 to-indigo-900 rounded-[3rem] text-white overflow-hidden relative">
+              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div>
+                  <h3 className="text-3xl font-bold mb-4">Need Custom Solutions?</h3>
+                  <p className="text-blue-100 text-lg opacity-80">We offer specialized sales and service for all electronic appliances.</p>
+                </div>
+                <button className="bg-white text-blue-900 px-10 py-5 rounded-full font-black hover:bg-blue-50 transition-all transform hover:scale-105 shadow-xl whitespace-nowrap">
+                  Contact Sales Team
+                </button>
+              </div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
             </div>
           </div>
         </div>
       )}
 
-      {/* Footer */}
       <footer className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
@@ -367,7 +926,7 @@ function App() {
                 Empowering the next generation of skilled electronics technicians through quality education and practical training.
               </p>
             </div>
-            
+
             <div>
               <h4 className="font-bold mb-4 text-lg">Quick Links</h4>
               <ul className="space-y-2 text-slate-400">
@@ -377,7 +936,7 @@ function App() {
                 <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-bold mb-4 text-lg">Contact Info</h4>
               <div className="space-y-3 text-slate-400 text-sm">
@@ -396,7 +955,7 @@ function App() {
               </div>
             </div>
           </div>
-          
+
           <div className="border-t border-slate-700 pt-8 text-center text-slate-400 text-sm">
             <p>&copy; 2025 SUSIL I.T.I - Run by R.M Charitable Trust. All rights reserved.</p>
           </div>
