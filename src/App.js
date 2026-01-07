@@ -5,6 +5,7 @@ function App() {
   const [activeMenu, setActiveMenu] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [selectedImage, setSelectedImage] = useState('s (10).jpeg');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,11 +56,13 @@ function App() {
 
   const assembledProducts = {
     speakers: [
-      { id: 's1', name: '2 Way Speaker', description: 'Professional grade audio output', image: 's (1).jpeg' },
       { id: 's2', name: '2way Woofer', description: 'Deep bass performance', image: 's (2).jpeg' },
       { id: 's3', name: '3way Woofer', description: 'High-fidelity sound reproduction', image: 's (3).jpeg' },
       { id: 's4', name: '3way Tower Speaker', description: 'Floor-standing premium audio', image: 's (4).jpeg' },
-      { id: 's5', name: '2way Slope Speaker', description: 'Unique acoustic design', image: 's (5).jpeg' }
+      { id: 's5', name: '2way Slope Speaker', description: 'Unique acoustic design', image: 's (5).jpeg' },
+      { id: 's15', name: 'Compact Bookshelf Speaker', description: 'Pure sound in a small footprint', image: 's (15).jpeg' },
+      { id: 's16', name: 'Outdoor Weatherproof Speaker', description: 'Perfect for patio and poolside', image: 's (16).jpeg' },
+      { id: 's17', name: 'Premium Floorstanding Pair', description: 'Audiophile grade stereo setup', image: 's (17).jpg' }
     ],
     amps: [
       { id: 'a1', name: 'Usb Stereo Player', description: 'With 3 Band equalizer', image: 's (6).jpeg' },
@@ -483,45 +486,62 @@ function App() {
 
       {/* Assembled Products Section */}
       {activeMenu === 'products' && (
-        <div className="py-20 bg-slate-50">
+        <div className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 text-blue-600 font-bold tracking-widest uppercase text-sm mb-4">
+            {/* Premium Hero Section */}
+            <div className="text-center mb-16 relative">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-20 -z-10 animate-pulse"></div>
+              <div className="inline-flex items-center space-x-2 px-6 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-bold tracking-widest uppercase mb-8 shadow-sm">
                 <Sparkles className="w-5 h-5" />
-                <span>Susil Premium Audio</span>
+                <span>Susil Premium Audio Labs</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">Expertly Assembled Products</h2>
-              <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                Hand-crafted, high-performance audio systems designed for clarity, power, and durability.
-              </p>
+              <h2 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tight">
+                Assembled <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Products</span>
+              </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {/* Unified Product Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
               {[...assembledProducts.speakers, ...assembledProducts.amps].map((product) => (
-                <div key={product.id} className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 border border-slate-100 transform hover:-translate-y-2">
-                  <div className="aspect-square bg-slate-100 relative overflow-hidden">
-                    {product.image ? (
-                      <img
-                        src={`${process.env.PUBLIC_URL}/products/${product.image}`}
-                        alt=""
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center text-slate-300">
-                        <Cpu className="w-16 h-16 opacity-20" />
-                      </div>
-                    )}
-                    {/* Minimal Overlay on Hover */}
-                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                      <div className="p-4 bg-white/20 backdrop-blur-md rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <Plus className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
+                <div
+                  key={product.id}
+                  onClick={() => setSelectedImage(product.image)}
+                  className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 border border-slate-100 hover:shadow-2xl hover:-translate-y-1"
+                >
+                  <div className="aspect-square relative overflow-hidden bg-slate-50">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/products/${product.image}`}
+                      alt={product.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
                   </div>
                 </div>
               ))}
             </div>
           </div>
+
+          {/* Localized Integrated Modal */}
+          {selectedImage && (
+            <div
+              className="fixed inset-0 z-[100] bg-white/80 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-300"
+              onClick={() => setSelectedImage(null)}
+            >
+              <button
+                className="absolute top-8 right-8 text-slate-900/50 hover:text-slate-900 transition-colors p-3 hover:bg-slate-900/10 rounded-full z-[110]"
+                onClick={() => setSelectedImage(null)}
+              >
+                <X className="w-8 h-8" />
+              </button>
+
+              <div className="relative max-w-4xl w-full h-full flex items-center justify-center" onClick={e => e.stopPropagation()}>
+                <img
+                  src={`${process.env.PUBLIC_URL}/products/${selectedImage}`}
+                  alt="Product Detail"
+                  className="max-w-full max-h-full object-contain rounded-3xl shadow-[0_32px_64px_-12px_rgba(0,0,0,0.15)] bg-white animate-in zoom-in-95 duration-500"
+                />
+              </div>
+            </div>
+          )}
         </div>
       )}
 
