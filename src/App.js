@@ -215,7 +215,7 @@ function App() {
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="w-4 h-4" />
-              <span>info@susiliti.com</span>
+              <span>susilitirjpm@gmail.com</span>
             </div>
           </div>
         </div>
