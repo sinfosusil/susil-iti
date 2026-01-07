@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, Heart, Search, Menu, X, Star, ChevronLeft, ChevronRight, Sparkles, Eye, Phone, Mail, MapPin, ChevronRight as ChevronRightIcon, Award, Users, BookOpen, Wrench, Cpu, Settings, GraduationCap, Plus, Monitor, BatteryCharging } from 'lucide-react';
+import { ShoppingCart, Heart, Search, Menu, X, Star, ChevronLeft, ChevronRight, Sparkles, Eye, Phone, Mail, MapPin, ChevronRight as ChevronRightIcon, Award, Users, BookOpen, Wrench, Cpu, Settings, GraduationCap, Plus, Monitor, BatteryCharging, Image } from 'lucide-react';
 
 function App() {
   const [activeMenu, setActiveMenu] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [selectedImage, setSelectedImage] = useState('s (10).jpeg');
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const galleryImages = [
+    's (16).jpeg', 's (17).jpeg', 's (18).jpeg', 's (19).jpeg', 's (20).jpeg',
+    's (21).jpeg', 's (22).jpeg', 's (23).jpeg', 's (24).jpeg', 's (25).jpeg'
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +26,8 @@ function App() {
     { id: 'research', label: 'Research and Development', icon: <BookOpen className="w-5 h-5" /> },
     { id: 'spares', label: 'Electronic Spares', icon: <Wrench className="w-5 h-5" /> },
     { id: 'products', label: 'Assembled Products', icon: <ShoppingCart className="w-5 h-5" /> },
-    { id: 'service', label: 'Sales and Service', icon: <Settings className="w-5 h-5" /> }
+    { id: 'service', label: 'Sales and Service', icon: <Settings className="w-5 h-5" /> },
+    { id: 'gallery', label: 'Gallery', icon: <Image className="w-5 h-5" /> }
   ];
 
   const features = [
@@ -505,7 +511,7 @@ function App() {
               {[...assembledProducts.speakers, ...assembledProducts.amps].map((product) => (
                 <div
                   key={product.id}
-                  onClick={() => setSelectedImage(product.image)}
+                  onClick={() => setSelectedImage(`/products/${product.image}`)}
                   className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 border border-slate-100 hover:shadow-2xl hover:-translate-y-1"
                 >
                   <div className="aspect-square relative overflow-hidden bg-slate-50">
@@ -520,28 +526,6 @@ function App() {
             </div>
           </div>
 
-          {/* Localized Integrated Modal */}
-          {selectedImage && (
-            <div
-              className="fixed inset-0 z-[100] bg-white/80 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-300"
-              onClick={() => setSelectedImage(null)}
-            >
-              <button
-                className="absolute top-8 right-8 text-slate-900/50 hover:text-slate-900 transition-colors p-3 hover:bg-slate-900/10 rounded-full z-[110]"
-                onClick={() => setSelectedImage(null)}
-              >
-                <X className="w-8 h-8" />
-              </button>
-
-              <div className="relative max-w-4xl w-full h-full flex items-center justify-center" onClick={e => e.stopPropagation()}>
-                <img
-                  src={`${process.env.PUBLIC_URL}/products/${selectedImage}`}
-                  alt="Product Detail"
-                  className="max-w-full max-h-full object-contain rounded-3xl shadow-[0_32px_64px_-12px_rgba(0,0,0,0.15)] bg-white animate-in zoom-in-95 duration-500"
-                />
-              </div>
-            </div>
-          )}
         </div>
       )}
 
@@ -928,6 +912,64 @@ function App() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {activeMenu === 'gallery' && (
+        <div className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-bold tracking-wide mb-4">
+                <Image className="w-5 h-5" />
+                <span>Our Gallery</span>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-black text-slate-900 mb-6">Visual Journey</h2>
+              <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Explore our campus, labs, and the vibrant life at SUSIL I.T.I.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {galleryImages.map((img, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => setSelectedImage(`/gallery/${img}`)}
+                  className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 border border-slate-100 hover:shadow-2xl hover:-translate-y-1"
+                >
+                  <div className="aspect-square relative overflow-hidden bg-slate-50">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/gallery/${img}`}
+                      alt={`Gallery ${idx + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Global Lightbox Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[100] bg-white/80 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-300"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="absolute top-8 right-8 text-slate-900/50 hover:text-slate-900 transition-colors p-3 hover:bg-slate-900/10 rounded-full z-[110]"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          <div className="relative max-w-4xl w-full h-full flex items-center justify-center" onClick={e => e.stopPropagation()}>
+            <img
+              src={`${process.env.PUBLIC_URL}${selectedImage}`}
+              alt="Preview"
+              className="max-w-full max-h-full object-contain rounded-3xl shadow-[0_32px_64px_-12px_rgba(0,0,0,0.15)] bg-white animate-in zoom-in-95 duration-500"
+            />
           </div>
         </div>
       )}
