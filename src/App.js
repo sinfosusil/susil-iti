@@ -54,34 +54,31 @@ function App() {
   ];
 
   const stats = [
-    { number: "15+", label: "Years Experience" },
+    { number: "25+", label: "Years Experience" },
     { number: "1000+", label: "Students Trained" },
     { number: "95%", label: "Placement Rate" },
     { number: "50+", label: "Industry Partners" }
   ];
 
-  const assembledProducts = {
-    speakers: [
-      { id: 's2', name: '2way Woofer', description: 'Deep bass performance', image: 's (2).jpeg' },
-      { id: 's3', name: '3way Woofer', description: 'High-fidelity sound reproduction', image: 's (3).jpeg' },
-      { id: 's4', name: '3way Tower Speaker', description: 'Floor-standing premium audio', image: 's (4).jpeg' },
-      { id: 's5', name: '2way Slope Speaker', description: 'Unique acoustic design', image: 's (5).jpeg' },
-      { id: 's15', name: 'Compact Bookshelf Speaker', description: 'Pure sound in a small footprint', image: 's (15).jpeg' },
-      { id: 's16', name: 'Outdoor Weatherproof Speaker', description: 'Perfect for patio and poolside', image: 's (16).jpeg' },
-      { id: 's17', name: 'Premium Floorstanding Pair', description: 'Audiophile grade stereo setup', image: 's (17).jpg' }
-    ],
-    amps: [
-      { id: 'a1', name: 'Usb Stereo Player', description: 'With 3 Band equalizer', image: 's (6).jpeg' },
-      { id: 'a2', name: '12v - USB Player', description: '2.1/4.1 Channel support', image: 's (7).jpeg' },
-      { id: 'a3', name: '24v - USB Player', description: 'High power input support', image: 's (8).jpeg' },
-      { id: 'a4', name: 'Dolby 5.1 Digital Amplifier', description: 'Crystal clear surround sound', image: 's (9).jpeg' },
-      { id: 'a5', name: 'Dolby 5.1 Channel Digital', description: 'Theater system | Home DTS', image: 's (10).jpeg' },
-      { id: 'a6', name: 'DOLBY 5.1 Digital LED', description: 'LED Level Home DTS', image: 's (11).jpeg' },
-      { id: 'a7', name: '13.1 Channel Dolby ATMOS', description: 'Ultimate power amplifier', image: 's (12).jpeg' },
-      { id: 'a8', name: 'Subwoofer Amplifier', description: 'Dedicated bass amplification', image: 's (13).jpeg' },
-      { id: 'a9', name: 'DOLBY ATMOS PRE-AMP', description: 'Precision signal processing', image: 's (14).jpeg' }
-    ]
-  };
+  const allProducts = [
+    // Restoring original picture order: s2, s3, s4, s5, s15, s16, s17, s6, s7, s8, s9, s10, s11, s12, s13, s14
+    { id: 's2', name: '2 Way Speaker', description: 'Deep bass performance', image: 's (2).jpeg' },
+    { id: 's3', name: '2 Way Woofer', description: 'High-fidelity sound reproduction', image: 's (3).jpeg' },
+    { id: 's4', name: '3 Way Woofer', description: 'Floor-standing premium audio', image: 's (4).jpeg' },
+    { id: 's5', name: '3 Way Tower Speakers', description: 'Unique acoustic design', image: 's (5).jpeg' },
+    { id: 's15', name: 'Subwoofer Amplifier', description: 'Pure sound in a small footprint', image: 's (15).jpeg' },
+    { id: 's16', name: 'Dolby Atmos Pre Amplifier', description: 'Perfect for patio and poolside', image: 's (16).jpeg' },
+    { id: 's17', name: 'Amplifier System', description: 'Audiophile grade stereo setup', image: 's (17).jpg' },
+    { id: 'a1', name: 'Slope Speaker', description: 'With 3 Band equalizer', image: 's (6).jpeg' },
+    { id: 'a2', name: 'Subwoofer', description: '2.1/4.1 Channel support', image: 's (7).jpeg' },
+    { id: 'a3', name: 'Stereo Player', description: 'High power input support', image: 's (8).jpeg' },
+    { id: 'a4', name: '12v Car Player', description: 'Crystal clear surround sound', image: 's (9).jpeg' },
+    { id: 'a5', name: '24v Bus Player', description: 'Theater system | Home DTS', image: 's (10).jpeg' },
+    { id: 'a6', name: 'Digital 5.1 Home DTS', description: 'LED Level Home DTS', image: 's (11).jpeg' },
+    { id: 'a7', name: 'Digital 5.1 Home Cinema Théâtre DTS', description: 'Ultimate power amplifier', image: 's (12).jpeg' },
+    { id: 'a8', name: 'Digital 5.1 Home Cinema Theatre DTS with LED Level indicators', description: 'Dedicated bass amplification', image: 's (13).jpeg' },
+    { id: 'a9', name: 'Digital Dolby Atmos 13.1 Channel Home DTS', description: 'Precision signal processing', image: 's (14).jpeg' }
+  ];
 
   const showroomPrices = {
     tvs: [
@@ -225,7 +222,7 @@ function App() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  SUSIL I.T.I
+                  SUSIL ELECTRONICS & I.T.I
                 </h1>
                 <p className="text-xs text-slate-600">Run by R.M Charitable Trust</p>
               </div>
@@ -328,7 +325,7 @@ function App() {
 
                     <div className="mt-12 flex items-center space-x-8 text-slate-400 border-t border-slate-100 pt-8">
                       <div className="flex flex-col">
-                        <span className="text-2xl font-bold text-slate-900">15+</span>
+                        <span className="text-2xl font-bold text-slate-900">25+</span>
                         <span className="text-xs uppercase tracking-wider font-semibold">Years Excellence</span>
                       </div>
                       <div className="w-px h-8 bg-slate-200"></div>
@@ -500,7 +497,7 @@ function App() {
 
             {/* Unified Product Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
-              {[...assembledProducts.speakers, ...assembledProducts.amps].map((product) => (
+              {allProducts.map((product) => (
                 <div
                   key={product.id}
                   onClick={() => setSelectedImage(`/products/${product.image}`)}
@@ -512,6 +509,14 @@ function App() {
                       alt={product.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <p className="text-white text-xs font-bold leading-tight">{product.name}</p>
+                    </div>
+                  </div>
+                  <div className="p-3 bg-white border-t border-slate-50">
+                    <h3 className="text-xs font-bold text-slate-800 line-clamp-2 min-h-[2rem] flex items-center justify-center text-center">
+                      {product.name}
+                    </h3>
                   </div>
                 </div>
               ))}
@@ -974,7 +979,7 @@ function App() {
                 <div className="bg-gradient-to-br from-blue-600 to-indigo-600 p-2 rounded-lg">
                   <GraduationCap className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold">SUSIL I.T.I</h3>
+                <h3 className="text-xl font-bold">SUSIL ELECTRONICS & I.T.I</h3>
               </div>
               <p className="text-slate-400 text-sm">
                 Empowering the next generation of skilled electronics technicians through quality education and practical training.
@@ -1011,7 +1016,7 @@ function App() {
           </div>
 
           <div className="border-t border-slate-700 pt-8 text-center text-slate-400 text-sm">
-            <p>&copy; 2025 SUSIL I.T.I - Run by R.M Charitable Trust. All rights reserved.</p>
+            <p>&copy; 2026 SUSIL ELECTRONICS & I.T.I - Run by R.M Charitable Trust. All rights reserved.</p>
           </div>
         </div>
       </footer>
