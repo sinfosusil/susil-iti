@@ -89,37 +89,29 @@ function App() {
         category: "NORMAL LED TV",
         icon: <Monitor className="w-6 h-6 text-blue-600" />,
         items: [
-          { size: "24” TV", price: "Rs. 7,000" },
-          { size: "32” TV", price: "Rs. 8,500" },
-          { size: "40” TV", price: "Rs. 14,000" }
+          { size: "24” TV", price: "Rs. 8,500" },
+          { size: "32” TV", price: "Rs. 10,500" }
         ]
       },
       {
         category: "SMART LED TV",
         icon: <Sparkles className="w-6 h-6 text-indigo-600" />,
         items: [
-          { size: "24” TV", price: "Rs. 8,500" },
-          { size: "40” TV", price: "Rs. 15,000" },
-          { size: "50” TV", price: "Rs. 25,000" }
-        ]
-      },
-      {
-        category: "SMART LED TV (Larger)",
-        icon: <Eye className="w-6 h-6 text-cyan-600" />,
-        items: [
-          { size: "32” TV", price: "Rs. 10,000" },
-          { size: "43” TV", price: "Rs. 16,000" },
-          { size: "43” 4K TV", price: "Rs. 18,500" }
+          { size: "24” TV", price: "Rs. 10,500" },
+          { size: "32” TV", price: "Rs. 12,000" },
+          { size: "40” TV", price: "Rs. 18,000" },
+          { size: "43” TV", price: "Rs. 19,500" }
         ]
       },
       {
         category: "SMART 4K / UHD DOLBY",
         icon: <Award className="w-6 h-6 text-purple-600" />,
         items: [
-          { size: "43” TV", price: "Rs. 22,000" },
-          { size: "50” TV", price: "Rs. 30,000" },
-          { size: "55” TV", price: "Rs. 35,000" },
-          { size: "65” TV", price: "Rs. 50,000" }
+          { size: "43” TV", price: "Rs. 26,500" },
+          { size: "50” TV", price: "Rs. 36,000" },
+          { size: "55” TV", price: "Rs. 42,000" },
+          { size: "65” TV", price: "Rs. 60,000" },
+          { size: "75” Touch Screen", price: "Rs. 1,10,000" }
         ]
       }
     ],
@@ -128,69 +120,69 @@ function App() {
         category: "ISOLATED STABILIZER",
         icon: <BatteryCharging className="w-6 h-6 text-amber-600" />,
         items: [
-          { size: "IS30", price: "Rs. 2,500" },
-          { size: "IS60", price: "Rs. 3,000" },
-          { size: "IS100", price: "Rs. 3,500" },
-          { size: "IS200", price: "Rs. 4,500" }
+          { size: "IS30", price: "Rs. 3,000" },
+          { size: "IS60", price: "Rs. 4,000" },
+          { size: "IS100", price: "Rs. 4,500" },
+          { size: "IS200", price: "Rs. 5,500" }
         ]
       }
     ]
   };
 
   const audioPackages = [
-    { model: "SA021 – 30", modelPrice: "Rs. 5,000", speaker: "8” / 20W × 2 No’s – Rs. 2,500", total: "Rs. 7,500" },
-    { model: "SA022 – 100", modelPrice: "Rs. 7,500", speaker: "8” / 40W 3-Way × 2 No’s – Rs. 7,000", total: "Rs. 14,500" },
-    { model: "SA022 – 100", modelPrice: "Rs. 7,500", speaker: "8” / 40W 2-Way × 2 No’s – Rs. 3,500", total: "Rs. 11,000" },
-    { model: "SA023 – 200", modelPrice: "Rs. 9,000", speaker: "8” / 100W × 2 No’s – Rs. 5,000", total: "Rs. 14,000" },
-    { model: "SA023 – 200", modelPrice: "Rs. 9,000", speaker: "12” / 100W × 2 No’s – Rs. 7,000", total: "Rs. 16,000" }
+    { model: "SA021 – 30", modelPrice: "Rs. 6,000", speaker: "8” / 20W × 2 No’s – Rs. 3,000", total: "Rs. 9,000" },
+    { model: "SA022 – 100", modelPrice: "Rs. 9,000", speaker: "8” / 40W 3-Way × 2 No’s – Rs. 8,500", total: "Rs. 17,500" },
+    { model: "SA022 – 100", modelPrice: "Rs. 9,000", speaker: "8” / 40W 2-Way × 2 No’s – Rs. 4,500", total: "Rs. 13,500" },
+    { model: "SA023 – 200", modelPrice: "Rs. 11,000", speaker: "8” / 100W × 2 No’s – Rs. 6,500", total: "Rs. 17,500" },
+    { model: "SA023 – 200", modelPrice: "Rs. 11,000", speaker: "12” / 100W × 2 No’s – Rs. 8,500", total: "Rs. 19,500" }
   ];
 
   const subwooferPackages = [
-    { model: "SA011 – 200", modelPrice: "Rs. 10,000", speaker: "—", sub: "12” SA12200 – Rs. 5,000", total: "Rs. 15,000" },
-    { model: "SA011 – 200", modelPrice: "Rs. 10,000", speaker: "—", sub: "12” SD12200 – Rs. 6,000", total: "Rs. 16,000" },
-    { model: "SA011 – 200", modelPrice: "Rs. 10,000", speaker: "—", sub: "12” SJ12300 – Rs. 8,000", total: "Rs. 18,000" },
-    { model: "SA012 – 1600", modelPrice: "Rs. 20,000", speaker: "—", sub: "12” SJ12500 (2 No’s) – Rs. 18,000", total: "Rs. 38,000" },
-    { model: "SA012 – 1600", modelPrice: "Rs. 20,000", speaker: "—", sub: "15” SA15500 – Rs. 15,000", total: "Rs. 35,000" }
+    { model: "SA011 – 200", modelPrice: "Rs. 12,000", speaker: "—", sub: "12” SA12200 – Rs. 6,000", total: "Rs. 18,000" },
+    { model: "SA011 – 200", modelPrice: "Rs. 12,000", speaker: "—", sub: "12” SD12200 – Rs. 7,500", total: "Rs. 19,500" },
+    { model: "SA011 – 200", modelPrice: "Rs. 12,000", speaker: "—", sub: "12” SJ12300 – Rs. 10,000", total: "Rs. 22,000" },
+    { model: "SA012 – 1600", modelPrice: "Rs. 24,000", speaker: "—", sub: "12” SJ12500 (2 No’s) – Rs. 22,000", total: "Rs. 46,000" },
+    { model: "SA012 – 1600", modelPrice: "Rs. 24,000", speaker: "—", sub: "15” SA15500 – Rs. 18,000", total: "Rs. 42,000" }
   ];
 
   const homeTheaterPackages = [
-    { model: "SA031 – 80", modelPrice: "Rs. 7,000", speaker: "4” / 10W × 2 No’s – Rs. 1,500", sub: "8” SA08280 – Rs. 3,000", total: "Rs. 11,500" },
-    { model: "SA031 – 80", modelPrice: "Rs. 7,000", speaker: "4” / 10W × 2 No’s – Rs. 1,500", sub: "8” SD08250 – Rs. 4,000", total: "Rs. 12,500" },
-    { model: "SA031 – 80", modelPrice: "Rs. 7,000", speaker: "4” / 10W × 2 No’s – Rs. 1,500", sub: "10” SA10250 – Rs. 4,000", total: "Rs. 12,500" },
-    { model: "SA031 – 80", modelPrice: "Rs. 7,000", speaker: "4” / 10W × 2 No’s – Rs. 1,500", sub: "10” SD10250 – Rs. 5,000", total: "Rs. 13,500" },
-    { model: "SA032 – 300", modelPrice: "Rs. 10,000", speaker: "8” / 40W × 2 No’s – Rs. 4,000", sub: "12” SD12200 – Rs. 6,000", total: "Rs. 20,000" },
-    { model: "SA032 – 300", modelPrice: "Rs. 10,000", speaker: "8” / 40W × 2 No’s – Rs. 4,000", sub: "12” SJ12300 – Rs. 8,000", total: "Rs. 22,000" }
+    { model: "SA031 – 80", modelPrice: "Rs. 8,500", speaker: "4” / 10W × 2 No’s – Rs. 2,000", sub: "8” SA08280 – Rs. 4,000", total: "Rs. 14,500" },
+    { model: "SA031 – 80", modelPrice: "Rs. 8,500", speaker: "4” / 10W × 2 No’s – Rs. 2,000", sub: "8” SD08250 – Rs. 5,000", total: "Rs. 15,500" },
+    { model: "SA031 – 80", modelPrice: "Rs. 8,500", speaker: "4” / 10W × 2 No’s – Rs. 2,000", sub: "10” SA10250 – Rs. 5,000", total: "Rs. 15,500" },
+    { model: "SA031 – 80", modelPrice: "Rs. 8,500", speaker: "4” / 10W × 2 No’s – Rs. 2,000", sub: "10” SD10250 – Rs. 6,000", total: "Rs. 16,500" },
+    { model: "SA032 – 300", modelPrice: "Rs. 12,000", speaker: "8” / 40W × 2 No’s – Rs. 5,000", sub: "12” SD12200 – Rs. 7,500", total: "Rs. 24,500" },
+    { model: "SA032 – 300", modelPrice: "Rs. 12,000", speaker: "8” / 40W × 2 No’s – Rs. 5,000", sub: "12” SJ12300 – Rs. 10,000", total: "Rs. 27,000" }
   ];
 
   const homeTheaterPackages51 = [
-    { model: "SA061 – 120", modelPrice: "Rs. 8,000", speaker: "4” / 10W × 5 No’s – Rs. 4,500", sub: "8” SA08280 – Rs. 3,000", total: "Rs. 15,500" },
-    { model: "SA061 – 120", modelPrice: "Rs. 8,000", speaker: "4” / 10W × 5 No’s – Rs. 4,500", sub: "8” SD08250 – Rs. 4,000", total: "Rs. 16,500" },
-    { model: "SA061 – 120", modelPrice: "Rs. 8,000", speaker: "4” / 10W × 5 No’s – Rs. 4,500", sub: "10” SA10250 – Rs. 4,000", total: "Rs. 16,500" },
-    { model: "SA061 – 120", modelPrice: "Rs. 8,000", speaker: "4” / 10W × 5 No’s – Rs. 4,500", sub: "10” SD10250 – Rs. 5,000", total: "Rs. 17,500" }
+    { model: "SA061 – 120", modelPrice: "Rs. 10,000", speaker: "4” / 10W × 5 No’s – Rs. 5,500", sub: "8” SA08280 – Rs. 4,000", total: "Rs. 19,500" },
+    { model: "SA061 – 120", modelPrice: "Rs. 10,000", speaker: "4” / 10W × 5 No’s – Rs. 5,500", sub: "8” SD08250 – Rs. 5,000", total: "Rs. 20,500" },
+    { model: "SA061 – 120", modelPrice: "Rs. 10,000", speaker: "4” / 10W × 5 No’s – Rs. 5,500", sub: "10” SA10250 – Rs. 5,000", total: "Rs. 20,500" },
+    { model: "SA061 – 120", modelPrice: "Rs. 10,000", speaker: "4” / 10W × 5 No’s – Rs. 5,500", sub: "10” SD10250 – Rs. 6,000", total: "Rs. 21,500" }
   ];
 
   const homeTheaterPackagesDigital51 = [
-    { model: "SD061", power: "170", ampPrice: "Rs. 15,000", speaker: "4” / 10W × 5 Nos", speakerPrice: "Rs. 4,500", sub: "10” SA 10250", subPrice: "Rs. 4,000", total: "Rs. 23,500" },
-    { model: "SD061", power: "170", ampPrice: "Rs. 15,000", speaker: "4” / 10W × 5 Nos", speakerPrice: "Rs. 4,500", sub: "10” SD 10250", subPrice: "Rs. 5,000", total: "Rs. 24,500" },
-    { model: "SD062", power: "300", ampPrice: "Rs. 17,000", speaker: "8” / 20W × 5 Nos", speakerPrice: "Rs. 8,500", sub: "12” SD 12200", subPrice: "Rs. 6,000", total: "Rs. 31,500" },
-    { model: "SD062", power: "300", ampPrice: "Rs. 17,000", speaker: "8” / 20W × 5 Nos", speakerPrice: "Rs. 8,500", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 33,500" },
-    { model: "SD063", power: "350", ampPrice: "Rs. 20,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 9,000", sub: "12” SD 12200", subPrice: "Rs. 6,000", total: "Rs. 35,000" },
-    { model: "SD063", power: "350", ampPrice: "Rs. 20,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 9,000", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 37,000" },
-    { model: "SD064", power: "470", ampPrice: "Rs. 23,000", speaker: "4” / 10W × 5 Nos", speakerPrice: "Rs. 4,500", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 35,500" },
-    { model: "SD065", power: "550", ampPrice: "Rs. 25,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 9,000", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 42,000" }
+    { model: "SD061", power: "170", ampPrice: "Rs. 18,000", speaker: "4” / 10W × 5 Nos", speakerPrice: "Rs. 5,500", sub: "10” SA 10250", subPrice: "Rs. 5,000", total: "Rs. 28,500" },
+    { model: "SD061", power: "170", ampPrice: "Rs. 18,000", speaker: "4” / 10W × 5 Nos", speakerPrice: "Rs. 5,500", sub: "10” SD 10250", subPrice: "Rs. 6,000", total: "Rs. 29,500" },
+    { model: "SD062", power: "300", ampPrice: "Rs. 20,500", speaker: "8” / 20W × 5 Nos", speakerPrice: "Rs. 10,500", sub: "12” SD 12200", subPrice: "Rs. 7,500", total: "Rs. 38,500" },
+    { model: "SD062", power: "300", ampPrice: "Rs. 20,500", speaker: "8” / 20W × 5 Nos", speakerPrice: "Rs. 10,500", sub: "12” SJ 12300", subPrice: "Rs. 10,000", total: "Rs. 41,000" },
+    { model: "SD063", power: "350", ampPrice: "Rs. 24,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 11,000", sub: "12” SD 12200", subPrice: "Rs. 7,500", total: "Rs. 42,500" },
+    { model: "SD063", power: "350", ampPrice: "Rs. 24,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 11,000", sub: "12” SJ 12300", subPrice: "Rs. 10,000", total: "Rs. 45,000" },
+    { model: "SD064", power: "470", ampPrice: "Rs. 28,000", speaker: "4” / 10W × 5 Nos", speakerPrice: "Rs. 5,500", sub: "12” SJ 12300", subPrice: "Rs. 10,000", total: "Rs. 43,500" },
+    { model: "SD065", power: "550", ampPrice: "Rs. 30,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 11,000", sub: "12” SJ 12300", subPrice: "Rs. 10,000", total: "Rs. 51,000" }
   ];
 
   const homeTheaterPackagesAtmos = [
-    { model: "SD066", power: "350R", ampPrice: "Rs. 35,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 9,000", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 52,000" },
-    { model: "SD067", power: "470LR", ampPrice: "Rs. 37,000", speaker: "4” / 10W × 5 Nos", speakerPrice: "Rs. 4,500", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 49,500" },
-    { model: "SD067", power: "550R", ampPrice: "Rs. 40,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 9,000", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 57,000" }
+    { model: "SD066", power: "350R", ampPrice: "Rs. 42,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 11,000", sub: "12” SJ 12300", subPrice: "Rs. 10,000", total: "Rs. 63,000" },
+    { model: "SD067", power: "470LR", ampPrice: "Rs. 44,500", speaker: "4” / 10W × 5 Nos", speakerPrice: "Rs. 5,500", sub: "12” SJ 12300", subPrice: "Rs. 10,000", total: "Rs. 60,000" },
+    { model: "SD067", power: "550R", ampPrice: "Rs. 48,000", speaker: "8” / 40W × 5 Nos", speakerPrice: "Rs. 11,000", sub: "12” SJ 12300", subPrice: "Rs. 10,000", total: "Rs. 69,000" }
   ];
 
   const ultimateAVRSystems = [
-    { config: "7.1 Channel", model: "SD081 – 600R", modelPrice: "Rs. 50,000", speaker: "8” / 40W × 7 Nos", speakerPrice: "Rs. 12,000", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 70,000" },
-    { config: "9.1 Dolby Atmos", model: "SD101 – 850R", modelPrice: "Rs. 1,50,000", speaker: "8” / 40W × 9 Nos", speakerPrice: "Rs. 15,000", sub: "12” SJ 12300", subPrice: "Rs. 8,000", total: "Rs. 1,73,000" },
-    { config: "11.2 Dolby Atmos", model: "SD121 – 850R", modelPrice: "Rs. 1,75,000", speaker: "8” / 40W × 11 Nos", speakerPrice: "Rs. 18,000", sub: "12” SJ 12300 × 2 Nos", subPrice: "Rs. 16,000", total: "Rs. 2,09,000" },
-    { config: "13.2 Dolby Atmos", model: "SD141 – 950R", modelPrice: "Rs. 2,75,000", speaker: "8” / 40W × 13 Nos", speakerPrice: "Rs. 21,000", sub: "12” SJ 12300 × 2 Nos", subPrice: "Rs. 16,000", total: "Rs. 3,12,000" }
+    { config: "7.1 Channel", model: "SD081 – 600R", modelPrice: "Rs. 60,000", speaker: "8” / 40W × 7 Nos", speakerPrice: "Rs. 14,500", sub: "12” SJ 12300", subPrice: "Rs. 10,000", total: "Rs. 84,500" },
+    { config: "9.1 Dolby Atmos", model: "SD101 – 850R", modelPrice: "Rs. 1,80,000", speaker: "8” / 40W × 9 Nos", speakerPrice: "Rs. 18,000", sub: "12” SJ 12300", subPrice: "Rs. 10,000", total: "Rs. 2,08,000" },
+    { config: "11.2 Dolby Atmos", model: "SD121 – 850R", modelPrice: "Rs. 2,10,000", speaker: "8” / 40W × 11 Nos", speakerPrice: "Rs. 22,000", sub: "12” SJ 12300 / 2 No's", subPrice: "Rs. 19,500", total: "Rs. 2,51,500" },
+    { config: "13.2 Dolby Atmos", model: "SD141 – 950R", modelPrice: "Rs. 3,30,000", speaker: "8” / 40W × 13 Nos", speakerPrice: "Rs. 25,500", sub: "12” SJ 12300 / 2 No's", subPrice: "Rs. 19,500", total: "Rs. 3,75,000" }
   ];
 
   return (
