@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, Heart, Search, Menu, X, Star, ChevronLeft, ChevronRight, Sparkles, Eye, Phone, Mail, MapPin, ChevronRight as ChevronRightIcon, Award, Users, BookOpen, Wrench, Cpu, Settings, GraduationCap, Plus, Monitor, BatteryCharging, Image } from 'lucide-react';
+import { ShoppingCart, Menu, X, Sparkles, Phone, Mail, MapPin, Award, Users, BookOpen, Wrench, Cpu, Settings, GraduationCap, Monitor, BatteryCharging, Image } from 'lucide-react';
 
 function App() {
   const [activeMenu, setActiveMenu] = useState('home');
@@ -77,7 +77,38 @@ function App() {
     { id: 'a6', name: 'Digital 5.1 Home DTS', description: 'LED Level Home DTS', image: 's (11).jpeg' },
     { id: 'a7', name: 'Digital 5.1 Home Cinema Théâtre DTS', description: 'Ultimate power amplifier', image: 's (12).jpeg' },
     { id: 'a8', name: 'Digital 5.1 Home Cinema Theatre DTS with LED Level indicators', description: 'Dedicated bass amplification', image: 's (13).jpeg' },
-    { id: 'a9', name: 'Digital Dolby Atmos 13.1 Channel Home DTS', description: 'Precision signal processing', image: 's (14).jpeg' }
+    { id: 'a9', name: 'Digital Dolby Atmos 13.1 Channel Home DTS', description: 'Precision signal processing', image: 's (14).jpeg' },
+    { id: 'p18', name: 'Robot', description: 'Advanced robotics kit', image: 's (18).jpeg' },
+    { id: 'p19', name: 'Solar Panel', description: 'High efficiency solar module', image: 's (19).jpeg' },
+    { id: 'p20', name: 'Isolated Stablizer', description: 'Voltage fluctuation protection', image: 's (20).jpeg' },
+    { id: 'p21', name: 'Induction / IR Stove', description: 'Smart cooking solution', image: 's (21).jpeg' },
+    { id: 'p22', name: 'LED TV', description: 'High definition display', image: 's (22).jpeg' },
+    { id: 'p23', name: 'Inverter/UPS', description: 'Uninterrupted power supply', image: 's (23).jpeg' },
+    { id: 'p24', name: 'Walkie Talkie', description: 'Long range communication', image: 's (24).jpeg' },
+    { id: 'p25', name: 'Airgrid', description: 'Network connectivity', image: 's (25).jpeg' },
+    { id: 'p26', name: 'Dolby Atmos', description: 'Immersive sound experience', image: 's (26).jpeg' },
+    { id: 'p27', name: 'Dolby 5.1 Systems', description: 'Surround sound system', image: 's (27).jpeg' },
+    { id: 'p28', name: '2.1 Sound Bar', description: 'Compact audio enhancement', image: 's (28).jpeg' },
+    { id: 'p29', name: 'PA System', description: 'Public address solution', image: 's (29).jpeg' },
+    { id: 'p30', name: 'CCTV', description: 'Security surveillance', image: 's (30).jpeg' },
+    { id: 'p31', name: 'Cordless Telephone', description: 'Wireless communication', image: 's (31).jpeg' },
+    { id: 'p32', name: 'Drone', description: 'Aerial photography & surveillance', image: 's (32).jpeg' },
+    { id: 'p33', name: 'EPABX', description: 'Intercom exchange system', image: 's (33).jpeg' },
+    { id: 'p34', name: 'Lithium Iron Battery', description: 'Long lasting power storage', image: 's (34).jpeg' },
+    { id: 'p35', name: 'Solar MPPT Controller', description: 'Maximum power point tracking', image: 's (35).jpeg' },
+    { id: 'p36', name: '2Way Intercom', description: 'Instant two-way communication', image: 's (36).jpeg' },
+    { id: 'p37', name: 'Telephone', description: 'Standard landline phone', image: 's (37).jpeg' },
+    { id: 'p38', name: 'Powerline Intercom', description: 'Communication over power lines', image: 's (38).jpeg' },
+    { id: 'p39', name: 'Educational Project', description: 'Learning kit for students', image: 's (39).jpeg' },
+    { id: 'p40', name: 'HAM Transceiver', description: 'Amateur radio equipment', image: 's (40).jpeg' },
+    { id: 'p41', name: 'DLP/3LCD/3D Projector', description: 'High quality projection', image: 's (41).jpeg' },
+    { id: 'p42', name: 'IP Phone', description: 'VoIP communication device', image: 's (42).jpeg' },
+    { id: 'p43', name: 'IP EPABX', description: 'IP-based PBX system', image: 's (43).jpeg' },
+    { id: 'p44', name: 'LED Screen & Video Splicer', description: 'Large display solutions', image: 's (44).jpeg' },
+    { id: 'p45', name: 'Motion Sensor Units', description: 'Automated detection system', image: 's (45).jpeg' },
+    { id: 'p46', name: 'Biometric Unit', description: 'Access control system', image: 's (46).jpeg' },
+    { id: 'p47', name: 'Door Security System', description: 'Enhanced premises security', image: 's (47).jpeg' },
+    { id: 'p48', name: 'Remote Switch Control', description: 'Wireless automation', image: 's (48).jpeg' }
   ];
 
   const showroomPrices = {
@@ -307,7 +338,7 @@ function App() {
                       </span>
                     </h2>
                     <p className="mt-6 text-base text-slate-500 sm:text-lg sm:max-w-xl sm:mx-auto md:text-xl lg:mx-0 leading-relaxed font-light">
-                      Join SUSIL I.T.I, Rajapalayam's premier destination for technical excellence.
+                      Join SUSIL ELECTRONICS & I.T.I, Rajapalayam's premier destination for technical excellence.
                       We provide the skills, certification, and industry connections you need to excel
                       in the fast-paced world of electronics.
                     </p>
@@ -372,7 +403,7 @@ function App() {
           <div className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h3 className="text-4xl font-bold text-slate-900 mb-4">Why Choose SUSIL I.T.I?</h3>
+                <h3 className="text-4xl font-bold text-slate-900 mb-4">Why Choose SUSIL ELECTRONICS & I.T.I ?</h3>
                 <p className="text-xl text-slate-600 max-w-2xl mx-auto">
                   Empowering students with practical skills and industry-recognized certifications
                 </p>
@@ -989,10 +1020,10 @@ function App() {
             <div>
               <h4 className="font-bold mb-4 text-lg">Quick Links</h4>
               <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Admissions</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Courses</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+                <li><button onClick={() => { setActiveMenu('home'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">About Us</button></li>
+                <li><button onClick={() => { setActiveMenu('home'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Admissions</button></li>
+                <li><button onClick={() => setActiveMenu('electronics')} className="hover:text-white transition-colors">Courses</button></li>
+                <li><button onClick={() => { setActiveMenu('home'); window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); }} className="hover:text-white transition-colors">Contact</button></li>
               </ul>
             </div>
 
