@@ -64,6 +64,9 @@ function App() {
   const allProducts = [
     // Restoring original picture order: s2, s3, s4, s5, s15, s16, s17, s6, s7, s8, s9, s10, s11, s12, s13, s14
     {
+      id: 's17', name: 'Amplifier System', description: 'Audiophile grade stereo setup', image: 's (17).jpg', price: 'Rs. 22,000',
+    },
+    {
       id: 's2', name: '2 Way Speaker',
       description: `The SUSIL is a compact and reliable 2-way speaker system designed to deliver clear, balanced audio reproduction across a wide frequency range. Crafted with a focus on durability and performance, this speaker features a sturdy rectangular enclosure wrapped in black textured fabric, providing a classic, understated aesthetic that blends seamlessly into home entertainment setups, small studios, or portable audio applications.
 
@@ -94,9 +97,6 @@ This model emphasizes affordability without compromising on essential audio qual
     },
     {
       id: 's16', name: 'Dolby Atmos Pre Amplifier', description: 'Perfect for patio and poolside', image: 's (16).jpeg', price: 'Rs. 18,500',
-    },
-    {
-      id: 's17', name: 'Amplifier System', description: 'Audiophile grade stereo setup', image: 's (17).jpg', price: 'Rs. 22,000',
     },
     {
       id: 'a1', name: 'Slope Speaker', description: 'With 3 Band equalizer', image: 's (6).jpeg', price: 'Rs. 5,500',
