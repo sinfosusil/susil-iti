@@ -217,6 +217,9 @@ This model emphasizes affordability without compromising on essential audio qual
     },
     {
       id: 'p48', name: 'Remote Switch Control', description: 'Wireless automation', image: 's (48).jpeg', price: 'Rs. 2,500',
+    },
+    {
+      id: 'adv-led', name: 'Advertising LED', description: 'Premium LED advertising solutions', image: 'Advertising LED.jpeg', price: 'Contact for Price',
     }
   ];
 
