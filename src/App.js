@@ -26,8 +26,9 @@ function App() {
     { id: 'electronics', label: 'Institute for Electronics', icon: <Cpu className="w-5 h-5" /> },
     { id: 'research', label: 'Research and Development', icon: <BookOpen className="w-5 h-5" /> },
     { id: 'spares', label: 'Electronic Spares', icon: <Wrench className="w-5 h-5" /> },
-    { id: 'products', label: 'Assembled Products', icon: <ShoppingCart className="w-5 h-5" /> },
-    { id: 'service', label: 'Sales and Service', icon: <Settings className="w-5 h-5" /> },
+    { id: 'products', label: 'Our Brand', icon: <ShoppingCart className="w-5 h-5" /> },
+    { id: 'authorized', label: 'Authorized Brands', icon: <Sparkles className="w-5 h-5" /> },
+    { id: 'service', label: 'Price List', icon: <Settings className="w-5 h-5" /> },
     { id: 'gallery', label: 'Gallery', icon: <Image className="w-5 h-5" /> }
   ];
 
@@ -62,9 +63,8 @@ function App() {
   ];
 
   const allProducts = [
-    // Restoring original picture order: s2, s3, s4, s5, s15, s16, s17, s6, s7, s8, s9, s10, s11, s12, s13, s14
     {
-      id: 's17', name: 'Amplifier System', description: 'Audiophile grade stereo setup', image: 's (17).jpg', price: 'Rs. 22,000',
+      id: 's17', name: 'Amplifier System', description: 'Audiophile grade stereo setup', image: 's (17).jpg', price: 'Rs. 22,000', category: 'assembled'
     },
     {
       id: 's2', name: '2 Way Speaker',
@@ -81,145 +81,145 @@ Key highlights:
 • Suitable for stereo pairs, surround sound systems, or standalone use
 
 This model emphasizes affordability without compromising on essential audio quality, making it a practical choice for enthusiasts seeking dependable performance in everyday scenarios.`,
-      image: 's (2).jpeg', price: 'Rs. 4,500' // specs removed
+      image: 's (2).jpeg', price: 'Rs. 4,500', category: 'assembled' // specs removed
     },
     {
-      id: 's3', name: '2 Way Woofer', description: 'High-fidelity sound reproduction', image: 's (3).jpeg', price: 'Rs. 6,800',
+      id: 's3', name: '2 Way Woofer', description: 'High-fidelity sound reproduction', image: 's (3).jpeg', price: 'Rs. 6,800', category: 'assembled'
     },
     {
-      id: 's4', name: '3 Way Woofer', description: 'Floor-standing premium audio', image: 's (4).jpeg', price: 'Rs. 8,500',
+      id: 's4', name: '3 Way Woofer', description: 'Floor-standing premium audio', image: 's (4).jpeg', price: 'Rs. 8,500', category: 'assembled'
     },
     {
-      id: 's5', name: '3 Way Tower Speakers', description: 'Unique acoustic design', image: 's (5).jpeg', price: 'Rs. 12,000',
+      id: 's5', name: '3 Way Tower Speakers', description: 'Unique acoustic design', image: 's (5).jpeg', price: 'Rs. 12,000', category: 'assembled'
     },
     {
-      id: 's15', name: 'Subwoofer Amplifier', description: 'Pure sound in a small footprint', image: 's (15).jpeg', price: 'Rs. 7,500',
+      id: 's15', name: 'Subwoofer Amplifier', description: 'Pure sound in a small footprint', image: 's (15).jpeg', price: 'Rs. 7,500', category: 'assembled'
     },
     {
-      id: 's16', name: 'Dolby Atmos Pre Amplifier', description: 'Perfect for patio and poolside', image: 's (16).jpeg', price: 'Rs. 18,500',
+      id: 's16', name: 'Dolby Atmos Pre Amplifier', description: 'Perfect for patio and poolside', image: 's (16).jpeg', price: 'Rs. 18,500', category: 'assembled'
     },
     {
-      id: 'a1', name: 'Slope Speaker', description: 'With 3 Band equalizer', image: 's (6).jpeg', price: 'Rs. 5,500',
+      id: 'a1', name: 'Slope Speaker', description: 'With 3 Band equalizer', image: 's (6).jpeg', price: 'Rs. 5,500', category: 'assembled'
     },
     {
-      id: 'a2', name: 'Subwoofer', description: '2.1/4.1 Channel support', image: 's (7).jpeg', price: 'Rs. 6,200',
+      id: 'a2', name: 'Subwoofer', description: '2.1/4.1 Channel support', image: 's (7).jpeg', price: 'Rs. 6,200', category: 'assembled'
     },
     {
-      id: 'a3', name: 'Stereo Player', description: 'High power input support', image: 's (8).jpeg', price: 'Rs. 4,800',
+      id: 'a3', name: 'Stereo Player', description: 'High power input support', image: 's (8).jpeg', price: 'Rs. 4,800', category: 'assembled'
     },
     {
-      id: 'a4', name: '12v Car Player', description: 'Crystal clear surround sound', image: 's (9).jpeg', price: 'Rs. 3,500',
+      id: 'a4', name: '12v Car Player', description: 'Crystal clear surround sound', image: 's (9).jpeg', price: 'Rs. 3,500', category: 'assembled'
     },
     {
-      id: 'a5', name: '24v Bus Player', description: 'Theater system | Home DTS', image: 's (10).jpeg', price: 'Rs. 8,500',
+      id: 'a5', name: '24v Bus Player', description: 'Theater system | Home DTS', image: 's (10).jpeg', price: 'Rs. 8,500', category: 'assembled'
     },
     {
-      id: 'a6', name: 'Digital 5.1 Home DTS', description: 'LED Level Home DTS', image: 's (11).jpeg', price: 'Rs. 15,500',
+      id: 'a6', name: 'Digital 5.1 Home DTS', description: 'LED Level Home DTS', image: 's (11).jpeg', price: 'Rs. 15,500', category: 'assembled'
     },
     {
-      id: 'a7', name: 'Digital 5.1 Home Cinema Théâtre DTS', description: 'Ultimate power amplifier', image: 's (12).jpeg', price: 'Rs. 18,000',
+      id: 'a7', name: 'Digital 5.1 Home Cinema Théâtre DTS', description: 'Ultimate power amplifier', image: 's (12).jpeg', price: 'Rs. 18,000', category: 'assembled'
     },
     {
-      id: 'a8', name: 'Digital 5.1 Home Cinema Theatre DTS with LED Level indicators', description: 'Dedicated bass amplification', image: 's (13).jpeg', price: 'Rs. 21,500',
+      id: 'a8', name: 'Digital 5.1 Home Cinema Theatre DTS with LED Level indicators', description: 'Dedicated bass amplification', image: 's (13).jpeg', price: 'Rs. 21,500', category: 'assembled'
     },
     {
-      id: 'a9', name: 'Digital Dolby Atmos 13.1 Channel Home DTS', description: 'Precision signal processing', image: 's (14).jpeg', price: 'Rs. 45,000',
+      id: 'a9', name: 'Digital Dolby Atmos 13.1 Channel Home DTS', description: 'Precision signal processing', image: 's (14).jpeg', price: 'Rs. 45,000', category: 'assembled'
     },
     {
-      id: 'p18', name: 'Robot', description: 'Advanced robotics kit', image: 's (18).jpeg', price: 'Rs. 12,500',
+      id: 'p18', name: 'Robot', description: 'Advanced robotics kit', image: 's (18).jpeg', price: 'Rs. 12,500', category: 'authorized'
     },
     {
-      id: 'p19', name: 'Solar Panel', description: 'High efficiency solar module', image: 's (19).jpeg', price: 'Rs. 8,000',
+      id: 'p19', name: 'Solar Panel', description: 'High efficiency solar module', image: 's (19).jpeg', price: 'Rs. 8,000', category: 'authorized'
     },
     {
-      id: 'p20', name: 'Isolated Stablizer', description: 'Voltage fluctuation protection', image: 's (20).jpeg', price: 'Rs. 3,500',
+      id: 'p20', name: 'Isolated Stablizer', description: 'Voltage fluctuation protection', image: 's (20).jpeg', price: 'Rs. 3,500', category: 'assembled'
     },
     {
-      id: 'p21', name: 'Induction / IR Stove', description: 'Smart cooking solution', image: 's (21).jpeg', price: 'Rs. 4,200',
+      id: 'p21', name: 'Induction / IR Stove', description: 'Smart cooking solution', image: 's (21).jpeg', price: 'Rs. 4,200', category: 'authorized'
     },
     {
-      id: 'p22', name: 'LED TV', description: 'High definition display', image: 's (22).jpeg', price: 'Rs. 10,500',
+      id: 'p22', name: 'LED TV', description: 'High definition display', image: 's (22).jpeg', price: 'Rs. 10,500', category: 'assembled'
     },
     {
-      id: 'p23', name: 'Inverter/UPS', description: 'Uninterrupted power supply', image: 's (23).jpeg', price: 'Rs. 15,000',
+      id: 'p23', name: 'Inverter/UPS', description: 'Uninterrupted power supply', image: 's (23).jpeg', price: 'Rs. 15,000', category: 'authorized'
     },
     {
-      id: 'p24', name: 'Walkie Talkie', description: 'Long range communication', image: 's (24).jpeg', price: 'Rs. 5,500',
+      id: 'p24', name: 'Walkie Talkie', description: 'Long range communication', image: 's (24).jpeg', price: 'Rs. 5,500', category: 'authorized'
     },
     {
-      id: 'p25', name: 'Airgrid', description: 'Network connectivity', image: 's (25).jpeg', price: 'Rs. 4,500',
+      id: 'p25', name: 'Airgrid', description: 'Network connectivity', image: 's (25).jpeg', price: 'Rs. 4,500', category: 'authorized'
     },
     {
-      id: 'p26', name: 'Dolby Atmos', description: 'Immersive sound experience', image: 's (26).jpeg', price: 'Rs. 35,000',
+      id: 'p26', name: 'Dolby Atmos', description: 'Immersive sound experience', image: 's (26).jpeg', price: 'Rs. 35,000', category: 'assembled'
     },
     {
-      id: 'p27', name: 'Dolby 5.1 Systems', description: 'Surround sound system', image: 's (27).jpeg', price: 'Rs. 25,000',
+      id: 'p27', name: 'Dolby 5.1 Systems', description: 'Surround sound system', image: 's (27).jpeg', price: 'Rs. 25,000', category: 'assembled'
     },
     {
-      id: 'p28', name: '2.1 Sound Bar', description: 'Compact audio enhancement', image: 's (28).jpeg', price: 'Rs. 8,500',
+      id: 'p28', name: '2.1 Sound Bar', description: 'Compact audio enhancement', image: 's (28).jpeg', price: 'Rs. 8,500', category: 'assembled'
     },
     {
-      id: 'p29', name: 'PA System', description: 'Public address solution', image: 's (29).jpeg', price: 'Rs. 18,000',
+      id: 'p29', name: 'PA System', description: 'Public address solution', image: 's (29).jpeg', price: 'Rs. 18,000', category: 'assembled'
     },
     {
-      id: 'p30', name: 'CCTV', description: 'Security surveillance', image: 's (30).jpeg', price: 'Rs. 12,000',
+      id: 'p30', name: 'CCTV', description: 'Security surveillance', image: 's (30).jpeg', price: 'Rs. 12,000', category: 'authorized'
     },
     {
-      id: 'p31', name: 'Cordless Telephone', description: 'Wireless communication', image: 's (31).jpeg', price: 'Rs. 2,500',
+      id: 'p31', name: 'Cordless Telephone', description: 'Wireless communication', image: 's (31).jpeg', price: 'Rs. 2,500', category: 'authorized'
     },
     {
-      id: 'p32', name: 'Drone', description: 'Aerial photography & surveillance', image: 's (32).jpeg', price: 'Rs. 45,000',
+      id: 'p32', name: 'Drone', description: 'Aerial photography & surveillance', image: 's (32).jpeg', price: 'Rs. 45,000', category: 'authorized'
     },
     {
-      id: 'p33', name: 'EPABX', description: 'Intercom exchange system', image: 's (33).jpeg', price: 'Rs. 8,500',
+      id: 'p33', name: 'EPABX', description: 'Intercom exchange system', image: 's (33).jpeg', price: 'Rs. 8,500', category: 'authorized'
     },
     {
-      id: 'p34', name: 'Lithium Iron Battery', description: 'Long lasting power storage', image: 's (34).jpeg', price: 'Rs. 6,500',
+      id: 'p34', name: 'Lithium Iron Battery', description: 'Long lasting power storage', image: 's (34).jpeg', price: 'Rs. 6,500', category: 'assembled'
     },
     {
-      id: 'p35', name: 'Solar MPPT Controller', description: 'Maximum power point tracking', image: 's (35).jpeg', price: 'Rs. 3,500',
+      id: 'p35', name: 'Solar MPPT Controller', description: 'Maximum power point tracking', image: 's (35).jpeg', price: 'Rs. 3,500', category: 'assembled'
     },
     {
-      id: 'p36', name: '2Way Intercom', description: 'Instant two-way communication', image: 's (36).jpeg', price: 'Rs. 1,800',
+      id: 'p36', name: '2Way Intercom', description: 'Instant two-way communication', image: 's (36).jpeg', price: 'Rs. 1,800', category: 'authorized'
     },
     {
-      id: 'p37', name: 'Telephone', description: 'Standard landline phone', image: 's (37).jpeg', price: 'Rs. 850',
+      id: 'p37', name: 'Telephone', description: 'Standard landline phone', image: 's (37).jpeg', price: 'Rs. 850', category: 'authorized'
     },
     {
-      id: 'p38', name: 'Powerline Intercom', description: 'Communication over power lines', image: 's (38).jpeg', price: 'Rs. 2,200',
+      id: 'p38', name: 'Powerline Intercom', description: 'Communication over power lines', image: 's (38).jpeg', price: 'Rs. 2,200', category: 'authorized'
     },
     {
-      id: 'p39', name: 'Educational Project', description: 'Learning kit for students', image: 's (39).jpeg', price: 'Rs. 1,500',
+      id: 'p39', name: 'Educational Project', description: 'Learning kit for students', image: 's (39).jpeg', price: 'Rs. 1,500', category: 'assembled'
     },
     {
-      id: 'p40', name: 'HAM Transceiver', description: 'Amateur radio equipment', image: 's (40).jpeg', price: 'Rs. 12,000',
+      id: 'p40', name: 'HAM Transceiver', description: 'Amateur radio equipment', image: 's (40).jpeg', price: 'Rs. 12,000', category: 'authorized'
     },
     {
-      id: 'p41', name: 'DLP/3LCD/3D Projector', description: 'High quality projection', image: 's (41).jpeg', price: 'Rs. 28,000',
+      id: 'p41', name: 'DLP/3LCD/3D Projector', description: 'High quality projection', image: 's (41).jpeg', price: 'Rs. 28,000', category: 'authorized'
     },
     {
-      id: 'p42', name: 'IP Phone', description: 'VoIP communication device', image: 's (42).jpeg', price: 'Rs. 4,500',
+      id: 'p42', name: 'IP Phone', description: 'VoIP communication device', image: 's (42).jpeg', price: 'Rs. 4,500', category: 'authorized'
     },
     {
-      id: 'p43', name: 'IP EPABX', description: 'IP-based PBX system', image: 's (43).jpeg', price: 'Rs. 15,000',
+      id: 'p43', name: 'IP EPABX', description: 'IP-based PBX system', image: 's (43).jpeg', price: 'Rs. 15,000', category: 'authorized'
     },
     {
-      id: 'p44', name: 'LED Screen & Video Splicer', description: 'Large display solutions', image: 's (44).jpeg', price: 'Rs. 65,000',
+      id: 'p44', name: 'LED Screen & Video Splicer', description: 'Large display solutions', image: 's (44).jpeg', price: 'Rs. 65,000', category: 'assembled'
     },
     {
-      id: 'p45', name: 'Motion Sensor Units', description: 'Automated detection system', image: 's (45).jpeg', price: 'Rs. 1,200',
+      id: 'p45', name: 'Motion Sensor Units', description: 'Automated detection system', image: 's (45).jpeg', price: 'Rs. 1,200', category: 'authorized'
     },
     {
-      id: 'p46', name: 'Biometric Unit', description: 'Access control system', image: 's (46).jpeg', price: 'Rs. 6,500',
+      id: 'p46', name: 'Biometric Unit', description: 'Access control system', image: 's (46).jpeg', price: 'Rs. 6,500', category: 'authorized'
     },
     {
-      id: 'p47', name: 'Door Security System', description: 'Enhanced premises security', image: 's (47).jpeg', price: 'Rs. 8,500',
+      id: 'p47', name: 'Door Security System', description: 'Enhanced premises security', image: 's (47).jpeg', price: 'Rs. 8,500', category: 'authorized'
     },
     {
-      id: 'p48', name: 'Remote Switch Control', description: 'Wireless automation', image: 's (48).jpeg', price: 'Rs. 2,500',
+      id: 'p48', name: 'Remote Switch Control', description: 'Wireless automation', image: 's (48).jpeg', price: 'Rs. 2,500', category: 'assembled'
     },
     {
-      id: 'adv-led', name: 'Advertising LED', description: 'Premium LED advertising solutions', image: 'Advertising LED.jpeg', price: 'Contact for Price',
+      id: 'adv-led', name: 'Advertising LED', description: 'Premium LED advertising solutions', image: 'Advertising LED.jpeg', price: 'Contact for Price', category: 'assembled'
     }
   ];
 
@@ -630,17 +630,17 @@ This model emphasizes affordability without compromising on essential audio qual
             <div className="text-center mb-16 relative">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-20 -z-10 animate-pulse"></div>
               <div className="inline-flex items-center space-x-2 px-6 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-bold tracking-widest uppercase mb-8 shadow-sm">
-                <Sparkles className="w-5 h-5" />
+                <ShoppingCart className="w-5 h-5" />
                 <span>Susil Premium Audio Labs</span>
               </div>
               <h2 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tight">
-                Assembled <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Products</span>
+                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Brand</span>
               </h2>
             </div>
 
             {/* Unified Product Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
-              {allProducts.map((product) => (
+              {allProducts.filter(p => p.category === 'assembled').map((product) => (
                 <div
                   key={product.id}
                   onClick={() => setSelectedProduct(product)}
@@ -660,6 +660,56 @@ This model emphasizes affordability without compromising on essential audio qual
 
                     <div className="mt-2 flex items-center justify-end">
                       <button className="p-2 bg-blue-50 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-all scale-90 group-hover:scale-100">
+                        <ShoppingCart className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      )}
+
+      {/* Authorized Brands Section */}
+      {activeMenu === 'authorized' && (
+        <div className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Premium Hero Section */}
+            <div className="text-center mb-16 relative">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-indigo-100 rounded-full blur-3xl opacity-20 -z-10 animate-pulse"></div>
+              <div className="inline-flex items-center space-x-2 px-6 py-2 bg-indigo-50 text-indigo-600 rounded-full text-sm font-bold tracking-widest uppercase mb-8 shadow-sm">
+                <Sparkles className="w-5 h-5" />
+                <span>Premium Authorized Sales</span>
+              </div>
+              <h2 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tight">
+                Authorized <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600">Brands</span>
+              </h2>
+            </div>
+
+            {/* Unified Product Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+              {allProducts.filter(p => p.category === 'authorized').map((product) => (
+                <div
+                  key={product.id}
+                  onClick={() => setSelectedProduct(product)}
+                  className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 border border-slate-100 hover:shadow-2xl hover:-translate-y-1 bg-white"
+                >
+                  <div className="aspect-square relative overflow-hidden bg-slate-50">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/products/${product.image}`}
+                      alt={product.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-4 bg-white border-t border-slate-50 flex flex-col gap-2">
+                    <h3 className="text-sm font-bold text-slate-800 line-clamp-2 min-h-[2.5rem] leading-tight group-hover:text-indigo-600 transition-colors">
+                      {product.name}
+                    </h3>
+
+                    <div className="mt-2 flex items-center justify-end">
+                      <button className="p-2 bg-indigo-50 text-indigo-600 rounded-full hover:bg-indigo-600 hover:text-white transition-all scale-90 group-hover:scale-100">
                         <ShoppingCart className="w-4 h-4" />
                       </button>
                     </div>
