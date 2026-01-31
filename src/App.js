@@ -7,6 +7,8 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
+  const [supportCategory, setSupportCategory] = useState('Our Brand');
 
   const galleryImages = [
     's (16).jpeg', 's (17).jpeg', 's (18).jpeg', 's (19).jpeg', 's (20).jpeg',
@@ -1266,9 +1268,12 @@ Advertising LED boards contain thousands of individual diodes vulnerable to unst
                       >
                         Explore Courses
                       </button>
-                      <button className="flex items-center justify-center px-10 py-4 border-2 border-slate-200 text-lg font-bold rounded-xl text-slate-700 bg-white hover:bg-slate-50 md:px-12 transition-all duration-300">
+                      <a
+                        href="tel:9245288900"
+                        className="flex items-center justify-center px-10 py-4 border-2 border-slate-200 text-lg font-bold rounded-xl text-slate-700 bg-white hover:bg-slate-50 md:px-12 transition-all duration-300"
+                      >
                         Contact Us
-                      </button>
+                      </a>
                     </div>
 
                     <div className="mt-12 flex items-center space-x-8 text-slate-400 border-t border-slate-100 pt-8">
@@ -1359,9 +1364,14 @@ Advertising LED boards contain thousands of individual diodes vulnerable to unst
                       </p>
                     </div>
                   </div>
-                  <button className="bg-white text-blue-900 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-xl whitespace-nowrap">
+                  <a
+                    href="https://www.google.com/maps/dir//Susil+Electronics+%26+I.T.I+96A7+North+Andalpuram+Rajapalayam"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-blue-900 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-xl whitespace-nowrap text-center"
+                  >
                     Get Directions
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -1376,12 +1386,21 @@ Advertising LED boards contain thousands of individual diodes vulnerable to unst
             <div className="text-center">
               <div className="bg-gradient-to-br from-blue-100 to-indigo-100 p-12 rounded-3xl">
                 <Cpu className="w-24 h-24 mx-auto text-blue-600 mb-6" />
-                <h2 className="text-4xl font-bold text-slate-900 mb-4">Institute for Electronics</h2>
-                <p className="text-xl text-slate-600 mb-8">
-                  Content section ready for your courses, programs, and curriculum details
-                </p>
-                <div className="inline-block bg-blue-50 px-6 py-3 rounded-full text-blue-600 font-medium">
-                  Add your content here
+                <h2 className="text-4xl font-black text-slate-900 mb-6">Institute for Electronics</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-left">
+                  {[
+                    { title: "Industrial Electronics", desc: "Covers automation, PLC, and industrial control systems." },
+                    { title: "Audio Engineering", desc: "Specialized training in amplifier design and sound acoustics." },
+                    { title: "Smart Solutions", desc: "Embedded systems and IoT-based consumer electronics." }
+                  ].map((course, i) => (
+                    <div key={i} className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-blue-200">
+                      <h3 className="font-bold text-blue-900 mb-2">{course.title}</h3>
+                      <p className="text-sm text-slate-600">{course.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="inline-block bg-blue-600 px-8 py-3 rounded-full text-white font-bold shadow-lg hover:bg-blue-700 transition-colors">
+                  Inquire for Admission
                 </div>
               </div>
             </div>
@@ -1395,12 +1414,20 @@ Advertising LED boards contain thousands of individual diodes vulnerable to unst
             <div className="text-center">
               <div className="bg-gradient-to-br from-purple-100 to-pink-100 p-12 rounded-3xl">
                 <BookOpen className="w-24 h-24 mx-auto text-purple-600 mb-6" />
-                <h2 className="text-4xl font-bold text-slate-900 mb-4">Research and Development</h2>
-                <p className="text-xl text-slate-600 mb-8">
-                  Content section ready for your R&D projects and innovations
-                </p>
-                <div className="inline-block bg-purple-50 px-6 py-3 rounded-full text-purple-600 font-medium">
-                  Add your content here
+                <h2 className="text-4xl font-black text-slate-900 mb-6">Research & Development</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 text-left">
+                  {[
+                    { title: "High-Fidelity Audio", desc: "Innovating lossless audio transmission and custom amplifier circuits for professional sound." },
+                    { title: "Power Management", desc: "Developing advanced isolated stabilization technologies to protect sensitive electronics." }
+                  ].map((project, i) => (
+                    <div key={i} className="bg-white/60 backdrop-blur-sm p-8 rounded-2xl border border-purple-200 shadow-sm">
+                      <h3 className="font-bold text-purple-900 mb-3">{project.title}</h3>
+                      <p className="text-slate-600 leading-relaxed">{project.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="inline-block bg-purple-600 px-8 py-3 rounded-full text-white font-bold shadow-lg hover:bg-purple-700 transition-colors">
+                  Collaborate with Us
                 </div>
               </div>
             </div>
@@ -1437,6 +1464,7 @@ Advertising LED boards contain thousands of individual diodes vulnerable to unst
                     <img
                       src={`${process.env.PUBLIC_URL}/products/${product.image}`}
                       alt={product.name}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
@@ -1494,6 +1522,7 @@ Advertising LED boards contain thousands of individual diodes vulnerable to unst
                     <img
                       src={`${process.env.PUBLIC_URL}/products/${product.image}`}
                       alt={product.name}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
@@ -1935,6 +1964,7 @@ Advertising LED boards contain thousands of individual diodes vulnerable to unst
                     <img
                       src={`${process.env.PUBLIC_URL}/gallery/${img}`}
                       alt={`Gallery ${idx + 1}`}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
@@ -1942,6 +1972,26 @@ Advertising LED boards contain thousands of individual diodes vulnerable to unst
               ))}
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Gallery Lightbox Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[120] bg-slate-900/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-300"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="absolute top-8 right-8 text-white hover:text-blue-400 transition-colors z-[130]"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X className="w-10 h-10" />
+          </button>
+          <img
+            src={`${process.env.PUBLIC_URL}${selectedImage}`}
+            alt="Gallery FullView"
+            className="max-w-full max-h-full rounded-2xl shadow-2xl animate-in zoom-in duration-500"
+          />
         </div>
       )}
 
@@ -2017,6 +2067,141 @@ Advertising LED boards contain thousands of individual diodes vulnerable to unst
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+      {/* Support Floating Button */}
+      <button
+        onClick={() => setIsSupportModalOpen(true)}
+        className="fixed bottom-8 right-8 z-[90] bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center space-x-3 group animate-bounce-subtle"
+        title="Get Support"
+      >
+        <Settings className="w-6 h-6 group-hover:rotate-180 transition-transform duration-700" />
+        <span className="font-black tracking-tight">SUPPORT</span>
+      </button>
+
+      {/* Support Request Modal */}
+      {isSupportModalOpen && (
+        <div
+          className="fixed inset-0 z-[110] bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 md:p-8 animate-in fade-in zoom-in duration-300 overflow-y-auto"
+          onClick={() => setIsSupportModalOpen(false)}
+        >
+          <div
+            className="bg-white w-full max-w-2xl rounded-[2.5rem] shadow-2xl overflow-hidden relative"
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="bg-gradient-to-r from-slate-900 to-indigo-900 p-8 text-white relative">
+              <button
+                onClick={() => setIsSupportModalOpen(false)}
+                className="absolute top-6 right-6 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              <div className="flex items-center space-x-4 mb-2">
+                <div className="p-3 bg-white/10 rounded-2xl">
+                  <Settings className="w-8 h-8 text-blue-400" />
+                </div>
+                <h2 className="text-3xl font-black">Service Support</h2>
+              </div>
+              <p className="text-blue-100/60 font-medium">Please fill out the form for service or technical assistance.</p>
+            </div>
+
+            {/* Form */}
+            <form
+              action="https://formsubmit.co/susilitirjpm@gmail.com"
+              method="POST"
+              className="p-8 md:p-10 space-y-6"
+            >
+              <input type="hidden" name="_subject" value="New Support Request - Susil ITI" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value={window.location.href} />
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-black text-slate-700 uppercase tracking-wider ml-1">Brand Category</label>
+                  <select
+                    name="Category"
+                    required
+                    onChange={(e) => setSupportCategory(e.target.value)}
+                    className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl px-5 py-4 focus:bg-white focus:border-blue-500 transition-all font-bold text-slate-900 appearance-none cursor-pointer"
+                  >
+                    <option value="Our Brand">Our Brand</option>
+                    <option value="Authorized Brands">Authorized Brands</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-black text-slate-700 uppercase tracking-wider ml-1">Product</label>
+                  <select
+                    name="Product"
+                    required
+                    className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl px-5 py-4 focus:bg-white focus:border-blue-500 transition-all font-bold text-slate-900 appearance-none cursor-pointer"
+                  >
+                    <option value="">Select Product</option>
+                    {allProducts
+                      .filter(p => supportCategory === 'Our Brand' ? p.category === 'assembled' : p.category === 'authorized')
+                      .map(p => (
+                        <option key={p.id} value={p.name}>{p.name}</option>
+                      ))
+                    }
+                    <option value="Other">Other / Not Listed</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-black text-slate-700 uppercase tracking-wider ml-1">Your Name</label>
+                  <input
+                    type="text"
+                    name="Name"
+                    required
+                    placeholder="Full Name"
+                    className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl px-5 py-4 focus:bg-white focus:border-blue-500 outline-none transition-all font-bold"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-black text-slate-700 uppercase tracking-wider ml-1">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="Phone"
+                    required
+                    placeholder="10-digit mobile"
+                    className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl px-5 py-4 focus:bg-white focus:border-blue-500 outline-none transition-all font-bold"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-black text-slate-700 uppercase tracking-wider ml-1">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="name@example.com"
+                  className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl px-5 py-4 focus:bg-white focus:border-blue-500 outline-none transition-all font-bold"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-black text-slate-700 uppercase tracking-wider ml-1">Description of Issue</label>
+                <textarea
+                  name="Issue"
+                  required
+                  rows="4"
+                  placeholder="Please describe the problem or service requirement..."
+                  className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl px-5 py-4 focus:bg-white focus:border-blue-500 outline-none transition-all font-bold resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-5 rounded-[1.5rem] font-black text-xl hover:shadow-2xl hover:shadow-blue-500/20 active:scale-[0.98] transition-all flex items-center justify-center space-x-3"
+              >
+                <span>SUBMIT REQUEST</span>
+              </button>
+            </form>
           </div>
         </div>
       )}
