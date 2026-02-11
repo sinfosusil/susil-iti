@@ -31,6 +31,7 @@ function App() {
 
   const menuItems = [
     { id: 'home', label: 'Home', icon: <GraduationCap className="w-5 h-5" /> },
+    { id: 'about', label: 'About Us', icon: <Users className="w-5 h-5" /> },
     { id: 'electronics', label: 'Institute for Electronics', icon: <Cpu className="w-5 h-5" /> },
     { id: 'research', label: 'Research and Development', icon: <BookOpen className="w-5 h-5" /> },
     { id: 'products', label: 'Our Brand', icon: <ShoppingCart className="w-5 h-5" /> },
@@ -1379,7 +1380,77 @@ Advertising LED boards contain thousands of individual diodes vulnerable to unst
         </div>
       )}
 
+      {/* About Us Section */}
+      {activeMenu === 'about' && (
+        <div className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-bold tracking-wide mb-4">
+                <Users className="w-5 h-5" />
+                <span>Our Legacy</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">About Susil Electronics</h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-12 mb-20">
+              <div className="space-y-6 text-lg text-slate-600 leading-relaxed text-center">
+                <p>
+                  <span className="font-bold text-slate-900">Susil Electronics</span> was established in 1992. At first it was an audio and video servicing company, technology oriented. Then in 2002, Susil Electronics ventured into the Industrial Training sector and was named <span className="font-bold text-slate-900">Susil Electronics Industrial School (I.T.I)</span>. It was approved by the Department of Employment and Training under the Government of Tamil Nadu.
+                </p>
+                <p>
+                  In that period, Susil ITI enrolled students for a 1 Year training programme in Mechanic General Electronics. Students who successfully completed the training were taken into Susil Electronics as a partime trainee, through which they successfully cleared the State Level Skill Competition exam, conducted by the Tamil Nadu Government.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 rounded-3xl p-8 md:p-12">
+                <div className="space-y-6 text-lg text-slate-600 leading-relaxed text-center">
+                  <h3 className="text-2xl font-bold text-slate-900">Social Commitment</h3>
+                  <p>
+                    In 2005, R.M Foundation along with the aid from the Government of Tamil Nadu, provided free electronics training for children who were child labour and provided them with job opportunities and placements.
+                  </p>
+                  <p>
+                    Students who were unable to continue their education due to poverty, were trained and placed through <span className="font-bold text-slate-900">Jan Shikshan Sansthan(JSS)</span> in collaboration with Madha Amrithanandha Foundation. Furthermore, through our R.M Foundation we provide free Industrial Training for the students who are economically backward.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div className="p-8 bg-white rounded-2xl shadow-lg border border-slate-100 hover:-translate-y-1 transition-transform duration-300">
+                <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Wrench className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">30+ Years Service</h3>
+                <p className="text-slate-600">
+                  For more than 30 Years, we assemble electronics and household appliances with 1 Year warranty. We also do servicing of electronic equipments.
+                </p>
+              </div>
+              <div className="p-8 bg-white rounded-2xl shadow-lg border border-slate-100 hover:-translate-y-1 transition-transform duration-300">
+                <div className="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <GraduationCap className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">Global Opportunities</h3>
+                <p className="text-slate-600">
+                  Students who graduated and trained from our Institution, got job opportunities from abroad. Many such students are living with good income or with their own business.
+                </p>
+              </div>
+              <div className="p-8 bg-white rounded-2xl shadow-lg border border-slate-100 hover:-translate-y-1 transition-transform duration-300">
+                <div className="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Award className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">Skill Excellence</h3>
+                <p className="text-slate-600">
+                  Our students have successfully cleared the State Level Skill Competition exam conducted by the Tamil Nadu Government.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Other sections */}
+
       {activeMenu === 'electronics' && (
         <div className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

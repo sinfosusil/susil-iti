@@ -8,6 +8,7 @@ export const galleryImages = [
 
 export const menuItems = [
     { id: 'home', label: 'Home', icon: <GraduationCap className="w-5 h-5" /> },
+    { id: 'about', label: 'About Us', icon: <Users className="w-5 h-5" /> },
     { id: 'electronics', label: 'Institute for Electronics', icon: <Cpu className="w-5 h-5" /> },
     { id: 'research', label: 'Research and Development', icon: <BookOpen className="w-5 h-5" /> },
     { id: 'products', label: 'Our Brand', icon: <ShoppingCart className="w-5 h-5" /> },
