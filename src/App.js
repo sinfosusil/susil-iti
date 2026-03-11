@@ -1452,28 +1452,78 @@ Advertising LED boards contain thousands of individual diodes vulnerable to unst
       {/* Other sections */}
 
       {activeMenu === 'electronics' && (
-        <div className="py-20">
+        <div className="py-12 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-blue-100 to-indigo-100 p-12 rounded-3xl">
-                <Cpu className="w-24 h-24 mx-auto text-blue-600 mb-6" />
-                <h2 className="text-4xl font-black text-slate-900 mb-6">Institute for Electronics</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-left">
-                  {[
-                    { title: "Industrial Electronics", desc: "Covers automation, PLC, and industrial control systems." },
-                    { title: "Audio Engineering", desc: "Specialized training in amplifier design and sound acoustics." },
-                    { title: "Smart Solutions", desc: "Embedded systems and IoT-based consumer electronics." }
-                  ].map((course, i) => (
-                    <div key={i} className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-blue-200">
-                      <h3 className="font-bold text-blue-900 mb-2">{course.title}</h3>
-                      <p className="text-sm text-slate-600">{course.desc}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="inline-block bg-blue-600 px-8 py-3 rounded-full text-white font-bold shadow-lg hover:bg-blue-700 transition-colors">
-                  Inquire for Admission
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200">
+              <div className="bg-gradient-to-r from-blue-700 to-indigo-800 p-8 text-white text-center">
+                <Cpu className="w-16 h-16 mx-auto mb-4 text-blue-200" />
+                <h2 className="text-3xl md:text-5xl font-black mb-4">SUSIL INSTITUTE OF ELECTRONICS TECHNOLOGY</h2>
+                <p className="text-xl md:text-2xl font-semibold text-blue-100">PART TIME COURSES</p>
+              </div>
+              
+              <div className="p-0 md:p-6 overflow-x-auto">
+                <table className="w-full min-w-[800px] text-left border-collapse">
+                  <thead>
+                    <tr className="bg-slate-100 text-slate-800 text-sm uppercase tracking-wider border-b-2 border-slate-300">
+                      <th className="p-4 font-bold w-16 text-center">S.No.</th>
+                      <th className="p-4 font-bold w-1/4">COURSE NAME</th>
+                      <th className="p-4 font-bold w-1/2">SKILLS</th>
+                      <th className="p-4 font-bold w-32">DURATION</th>
+                      <th className="p-4 font-bold w-32 text-right">COURSE FEE</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 text-slate-700">
+                    {[
+                      { s: 1, name: "TV Mechanic", skills: "LCD, LED, PLASMA TV, Panels, Software", duration: "10 weeks", fee: "Rs.10,000" },
+                      { s: 2, name: "Home theatre System", skills: "Mono, Stereo, Dolby, Dolby Atmos", duration: "10 weeks", fee: "Rs.10,000" },
+                      { s: 3, name: "P.A. Sound System", skills: "Mono, Stereo, Equalizer, Mixer, Dolby", duration: "10 weeks", fee: "Rs.8,000" },
+                      { s: 4, name: "Cell Phone Mechanic", skills: "components, Display, Software, Hardware", duration: "10 weeks", fee: "Rs.7,000" },
+                      { s: 5, name: "Power Backup Technician", skills: "Inverter, UPS, Battery, Solar Panel, Grid", duration: "10 weeks", fee: "Rs.7,000" },
+                      { s: 6, name: "Security System", skills: "CCTV, EPABX, Transceiver, Networks, Air grid", duration: "10 weeks", fee: "Rs.7,000" },
+                      { s: 7, name: "Advertising Display System", skills: "LED, Outdoor LED screen, Video Splicer", duration: "10 weeks", fee: "Rs.7,000" },
+                      { s: 8, name: "AI - Robotics", skills: "Arduino, Raspberry, C++, MCU, Python Programming, Machine Learning, Sensors, Control System, AI tools", duration: "15 weeks", fee: "Rs.15,000" },
+                      { s: 9, name: "Micro Controller", skills: "Programming Node MCU-ESP 8266", duration: "8 weeks", fee: "Rs.5,000" },
+                      { s: 10, name: "Industrial Electronics", skills: "Specific Devices, Power Control, Stabilizers, MCU, Instruments, Automation", duration: "15 weeks", fee: "Rs.15,000" },
+                      { s: 11, name: "Basic Electronics (Lower)", skills: "Electricity, Components, Power Supply", duration: "4 weeks", fee: "Rs.2,000" },
+                      { s: 12, name: "Basic Electronics (Higher)", skills: "Foundations of Circuit Design", duration: "6 weeks", fee: "Rs.5,000" },
+                      { s: 13, name: "Electronic Stoves", skills: "Induction, IR, Plasma", duration: "6 weeks", fee: "Rs.5,000" },
+                      { s: 14, name: "Modern Electronics Technician", skills: "S.No.1 To S.No.13 (Full time & Part Time)", duration: "1 Year", fee: "Rs.75,000" }
+                    ].map((row, idx) => (
+                      <tr key={idx} className="hover:bg-blue-50 transition-colors">
+                        <td className="p-4 text-center font-medium text-slate-500">{row.s}.</td>
+                        <td className="p-4 font-bold text-slate-900">{row.name}</td>
+                        <td className="p-4 leading-relaxed">{row.skills}</td>
+                        <td className="p-4 whitespace-nowrap">{row.duration}</td>
+                        <td className="p-4 whitespace-nowrap text-right font-semibold text-slate-900">{row.fee}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="bg-blue-50 p-8 border-t border-blue-100">
+                <div className="max-w-4xl mx-auto text-center">
+                  <h3 className="text-2xl font-black text-blue-900 mb-4 inline-flex items-center gap-3">
+                    <Sparkles className="w-6 h-6 text-yellow-500" />
+                    Summer Course
+                    <Sparkles className="w-6 h-6 text-yellow-500" />
+                  </h3>
+                  <p className="text-lg text-slate-700 mb-4 max-w-2xl mx-auto">
+                    As a summer time course, we provide a concise version of all the above mentioned courses for the students.
+                  </p>
+                  <div className="inline-block bg-white px-6 py-3 rounded-2xl shadow-sm border border-blue-200 mb-8">
+                    <span className="font-semibold text-blue-800">Part time course of one month for </span>
+                    <span className="text-xl font-black text-blue-600">Rs. 1000/-</span>
+                  </div>
+                  <div>
+                    <button onClick={() => window.open('https://wa.me/919566516737?text=I am interested in admission for the Summer Course', '_blank')} className="bg-blue-600 px-8 py-3 rounded-full text-white font-bold shadow-lg hover:bg-blue-700 transition-all hover:-translate-y-1 inline-flex items-center gap-2">
+                      <GraduationCap className="w-5 h-5" />
+                      Inquire for Admission
+                    </button>
+                  </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
